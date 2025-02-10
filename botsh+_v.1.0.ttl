@@ -1,0 +1,754 @@
+@prefix : <http://purl.org/botsh-ext-ext#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix botsh-ext-ext: <http://purl.org/botsh-ext-ext#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix onem2m: <https://git.onem2m.org/MAS/BaseOntology/raw/master/base_ontology.owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://purl.org/botsh-ext-ext> .
+
+<http://purl.org/botsh-ext-ext> rdf:type owl:Ontology ;
+                         dcterms:creator "Vamsee Krishna Kiran Muppavarapu"@en ;
+                         dcterms:modified "2024-12-02" ;
+                         rdfs:comment "Building Topology Ontology for Smart Homes - extended. BOTSH ontology is extended and aligned with ToCo communication ontology and ML-Schema ontology. Developed as part of PhD research work."@en ;
+                         owl:versionInfo "v.1.0" ;
+                         dcterms:creator "Ramesh Gowtham"@en ;
+                         dcterms:created "2024-07-14" ;
+                         dcterms:title "Building Topology Ontology for Smart Homes (botsh-ext)"@en ;
+                         dcterms:description "BOTSH Ontology extended with concepts related to Building and Non-Building structures with alignments to ToCo and ML-Schema ontologies."@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+vs:term_status rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#fn
+vcard:fn rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/domainIncludes
+schema:domainIncludes rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/rangeIncludes
+schema:rangeIncludes rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/botsh-ext#adjacentElement
+botsh-ext:adjacentElement rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf botsh-ext:hasElement ;
+                      owl:propertyDisjointWith botsh-ext:intersectingElement ;
+                      rdfs:comment "Relation between a zone and its adjacent building elements, bounding the zone."@en ;
+                      rdfs:isDefinedBy botsh-ext: ;
+                      rdfs:label "adjacent element"@en ;
+                      vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#adjacentZone
+botsh-ext:adjacentZone rdf:type owl:ObjectProperty ,
+                            owl:SymmetricProperty ;
+                   rdfs:domain botsh-ext:Zone ;
+                   rdfs:range botsh-ext:Zone ;
+                   owl:propertyDisjointWith botsh-ext:intersectsZone ;
+                   rdfs:comment "Relationship between two zones that share a common interface, but do not intersect."@en ;
+                   rdfs:isDefinedBy botsh-ext: ;
+                   rdfs:label "adjacent zone"@en ;
+                   vs:term_status "stable" ;
+                   schema:domainIncludes botsh-ext:Building ,
+                                         botsh-ext:BuildingStorey ,
+                                         botsh-ext:Site ,
+                                         botsh-ext:Space ;
+                   schema:rangeIncludes botsh-ext:Building ,
+                                        botsh-ext:BuildingStorey ,
+                                        botsh-ext:Site ,
+                                        botsh-ext:Space .
+
+
+###  http://purl.org/botsh-ext#containsElement
+botsh-ext:containsElement rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf botsh-ext:hasElement ;
+                      owl:propertyChainAxiom ( botsh-ext:containsZone
+                                               botsh-ext:containsElement
+                                             ) ;
+                      rdfs:comment "Relation to a building element contained in a zone."@en ;
+                      rdfs:isDefinedBy botsh-ext: ;
+                      rdfs:label "contains element"@en ;
+                      vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#containsThing
+botsh-ext:containsThing rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf botsh-ext:hasThing ;
+                    owl:propertyChainAxiom ( botsh-ext:containsZone
+                                             botsh-ext:containsElement
+                                             botsh-ext:containsThing
+                                           ) ;
+                    rdfs:isDefinedBy botsh-ext: ;
+                    rdfs:label "contains thing"@en ;
+                    vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#containsZone
+botsh-ext:containsZone rdf:type owl:ObjectProperty ,
+                            owl:TransitiveProperty ;
+                   rdfs:domain botsh-ext:Zone ;
+                   rdfs:range botsh-ext:Zone ;
+                   rdfs:comment "Relationship to the subzones of a major zone. A space zone could for instance be contained in a storey zone which is further contained in a building zone. botsh-ext:containsZone is a transitive property. This implies that in the previous example a botsh-ext:containsZone relationship holds between the space zone and the building zone."@en ;
+                   rdfs:isDefinedBy botsh-ext: ;
+                   rdfs:label "contains zone"@en ;
+                   vs:term_status "stable" ;
+                   schema:domainIncludes botsh-ext:Building ,
+                                         botsh-ext:BuildingStorey ,
+                                         botsh-ext:Site ,
+                                         botsh-ext:Space ;
+                   schema:rangeIncludes botsh-ext:Building ,
+                                        botsh-ext:BuildingStorey ,
+                                        botsh-ext:Site ,
+                                        botsh-ext:Space .
+
+
+###  http://purl.org/botsh-ext#deviceMountedOn
+botsh-ext:deviceMountedOn rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf botsh-ext:isPartOf ;
+                      rdfs:isDefinedBy botsh-ext: ;
+                      vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#hasBuilding
+botsh-ext:hasBuilding rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf botsh-ext:containsZone ;
+                  rdfs:domain botsh-ext:Zone ;
+                  rdfs:range botsh-ext:Building ;
+                  rdfs:comment "Relation to buildings contained in a zone. The typical domains of botsh-ext:hasBuilding are instances of botsh-ext:Site."@en ;
+                  rdfs:isDefinedBy botsh-ext: ;
+                  rdfs:label "has building"@en ;
+                  vs:term_status "stable" ;
+                  schema:domainIncludes botsh-ext:Site .
+
+
+###  http://purl.org/botsh-ext#hasElement
+botsh-ext:hasElement rdf:type owl:ObjectProperty ;
+                 rdfs:domain botsh-ext:Zone ;
+                 rdfs:range botsh-ext:ArchitecturalElement ;
+                 owl:propertyChainAxiom ( botsh-ext:containsZone
+                                          botsh-ext:hasElement
+                                        ) ;
+                 rdfs:comment "Links a Zone to an Element that is either contained in, adjacent to or intersecting with the Zone. The intended use of this relationship is not to be stated explicitly, but to be inferred from its sub-properties. It will, for example, allow one to query for all the doors of a building given that they have an adjacency to spaces of the building."@en ;
+                 rdfs:isDefinedBy botsh-ext: ;
+                 rdfs:label "has building element"@en ;
+                 vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#hasMLRun
+botsh-ext:hasMLRun rdf:type owl:ObjectProperty ;
+               rdfs:domain botsh-ext:MicroController ;
+               rdfs:range <http://www.w3.org/ns/mls#Run> .
+
+
+###  http://purl.org/botsh-ext#hasNetworkInterface
+botsh-ext:hasNetworkInterface rdf:type owl:ObjectProperty ;
+                          rdfs:domain <http://purl.org/toco/Device> ;
+                          rdfs:range <http://purl.org/toco/Interface> .
+
+
+###  http://purl.org/botsh-ext#hasNonBuilding
+botsh-ext:hasNonBuilding rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf botsh-ext:containsZone ;
+                     rdfs:domain botsh-ext:Zone ;
+                     rdfs:range botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#hasSpace
+botsh-ext:hasSpace rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf botsh-ext:containsZone ;
+               rdfs:domain botsh-ext:Zone ;
+               rdfs:range botsh-ext:Space ;
+               rdfs:comment "Relation to spaces contained in a zone. The typical domains of botsh-ext:hasSpace are instances of botsh-ext:BuildingStorey or botsh-ext:Building."@en ;
+               rdfs:isDefinedBy botsh-ext: ;
+               rdfs:label "has space"@en ;
+               vs:term_status "stable" ;
+               schema:domainIncludes botsh-ext:BuildingStorey .
+
+
+###  http://purl.org/botsh-ext#hasStorey
+botsh-ext:hasStorey rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf botsh-ext:containsZone ;
+                rdfs:domain botsh-ext:Zone ;
+                rdfs:range botsh-ext:BuildingStorey ;
+                rdfs:comment "Relation to storeys contained in a zone. The typical domains of botsh-ext:hasStorey are instances of botsh-ext:Building."@en ;
+                rdfs:isDefinedBy botsh-ext: ;
+                rdfs:label "has storey"@en ;
+                vs:term_status "stable" ;
+                schema:domainIncludes botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#hasSubElement
+botsh-ext:hasSubElement rdf:type owl:ObjectProperty ;
+                    rdfs:domain botsh-ext:ArchitecturalElement ;
+                    rdfs:range botsh-ext:ArchitecturalElement ;
+                    rdfs:comment "Relation between two building elements, either one element hosting another (e.g. a wall hosts a window) or a subcomposition of a building element into smaller parts (e.g. an air handling unit has as a part a fan)."@en ;
+                    rdfs:isDefinedBy botsh-ext: ;
+                    rdfs:label "has sub-element"@en ;
+                    vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#hasSubThing
+botsh-ext:hasSubThing rdf:type owl:ObjectProperty ;
+                  rdfs:domain botsh-ext:Thing ;
+                  rdfs:range botsh-ext:Thing ;
+                  rdfs:comment "One controller can have another controller or sensor as part of it."@en .
+
+
+###  http://purl.org/botsh-ext#hasThing
+botsh-ext:hasThing rdf:type owl:ObjectProperty ;
+               owl:inverseOf botsh-ext:isPartOf ;
+               rdfs:domain botsh-ext:ArchitecturalElement ;
+               rdfs:range botsh-ext:Thing ;
+               owl:propertyChainAxiom ( botsh-ext:containsZone
+                                        botsh-ext:hasElement
+                                        botsh-ext:hasThing
+                                      ) ;
+               rdfs:isDefinedBy botsh-ext: ;
+               rdfs:label "has Thing"@en ;
+               vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#interfaceOf
+botsh-ext:interfaceOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain botsh-ext:BuildingInterface ;
+                  rdfs:range botsh-ext:BuildingElement ,
+                             botsh-ext:Zone ;
+                  rdfs:comment "Relationship between an interface and another thing (building zone, element or owl:Thing)"@en ;
+                  rdfs:isDefinedBy botsh-ext: ;
+                  rdfs:label "interface of"@en ;
+                  vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#intersectingElement
+botsh-ext:intersectingElement rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf botsh-ext:hasElement ;
+                          rdfs:comment "Relation between a Zone and a building Element that intersects it."@en ;
+                          rdfs:isDefinedBy botsh-ext: ;
+                          rdfs:label "intersecting element"@en ;
+                          vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#intersectsZone
+botsh-ext:intersectsZone rdf:type owl:ObjectProperty ,
+                              owl:SymmetricProperty ;
+                     rdfs:domain botsh-ext:Zone ;
+                     rdfs:range botsh-ext:Zone ;
+                     rdfs:comment "Relationship between two zones whose 3D extent intersect. For example, a stairwell intersects different storeys."@en ;
+                     rdfs:isDefinedBy botsh-ext: ;
+                     rdfs:label "intersects zone"@en ;
+                     vs:term_status "stable" ;
+                     schema:domainIncludes botsh-ext:Building ,
+                                           botsh-ext:BuildingStorey ,
+                                           botsh-ext:Site ,
+                                           botsh-ext:Space ;
+                     schema:rangeIncludes botsh-ext:Building ,
+                                          botsh-ext:BuildingStorey ,
+                                          botsh-ext:Site ,
+                                          botsh-ext:Space .
+
+
+###  http://purl.org/botsh-ext#isPartOf
+botsh-ext:isPartOf rdf:type owl:ObjectProperty ;
+               rdfs:domain botsh-ext:Thing ;
+               rdfs:range botsh-ext:ArchitecturalElement ;
+               rdfs:isDefinedBy botsh-ext: ;
+               vs:term_status "stable" .
+
+
+###  http://purl.org/botsh-ext#linkHasInterface
+botsh-ext:linkHasInterface rdf:type owl:ObjectProperty ;
+                       rdfs:domain <http://purl.org/toco/Link> ;
+                       rdfs:range <http://purl.org/toco/Interface> .
+
+
+###  http://purl.org/botsh-ext#usesNetworkCommunicationDevice
+botsh-ext:usesNetworkCommunicationDevice rdf:type owl:ObjectProperty ;
+                                     rdfs:domain botsh-ext:Thing ;
+                                     rdfs:range <http://purl.org/toco/Device> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/bosh#ActuatingDevice
+<http://purl.org/bosh#ActuatingDevice> rdf:type owl:Class ;
+                                       rdfs:subClassOf botsh-ext:Thing .
+
+
+###  http://purl.org/bosh#Appliance
+<http://purl.org/bosh#Appliance> rdf:type owl:Class ;
+                                 rdfs:subClassOf botsh-ext:ElectronicDevices .
+
+
+###  http://purl.org/bosh#NetworkComponent
+<http://purl.org/bosh#NetworkComponent> rdf:type owl:Class ;
+                                        rdfs:subClassOf botsh-ext:Thing .
+
+
+###  http://purl.org/bosh#SensingDevice
+<http://purl.org/bosh#SensingDevice> rdf:type owl:Class ;
+                                     rdfs:subClassOf botsh-ext:Thing .
+
+
+###  http://purl.org/botsh-ext#AgriculturalBuilding
+botsh-ext:AgriculturalBuilding rdf:type owl:Class ;
+                           rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#AnimalBuilding
+botsh-ext:AnimalBuilding rdf:type owl:Class ;
+                     rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#Arch
+botsh-ext:Arch rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#ArchitecturalElement
+botsh-ext:ArchitecturalElement rdf:type owl:Class ;
+                           owl:disjointWith botsh-ext:Zone ;
+                           rdfs:comment "Architectural elements are the unique details and component parts that, together, form the architectural style of houses, buildings and structures." .
+
+
+###  http://purl.org/botsh-ext#BathRoom
+botsh-ext:BathRoom rdf:type owl:Class ;
+               rdfs:subClassOf botsh-ext:Room .
+
+
+###  http://purl.org/botsh-ext#Beam
+botsh-ext:Beam rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#BedRoom
+botsh-ext:BedRoom rdf:type owl:Class ;
+              rdfs:subClassOf botsh-ext:Room .
+
+
+###  http://purl.org/botsh-ext#Bridge
+botsh-ext:Bridge rdf:type owl:Class ;
+             rdfs:subClassOf botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#Building
+botsh-ext:Building rdf:type owl:Class ;
+               rdfs:subClassOf botsh-ext:Zone ;
+               owl:disjointWith botsh-ext:BuildingStorey ,
+                                botsh-ext:NonBuilding ,
+                                botsh-ext:Site ,
+                                botsh-ext:Space ;
+               rdfs:comment "A building or edifice, is an enclosed structure with a roof and walls standing more or less permanently in one place, such as a house and is specifically designed for human occupancy. A botsh-ext:Building is a part of the physical world or a virtual world that is inherently located in this world and having a 3D spatial extent, is contained in a building site, and can contain one or more building storeys that are vertically connected."@en ;
+               rdfs:label "Building"@en .
+
+
+###  http://purl.org/botsh-ext#BuildingElement
+botsh-ext:BuildingElement rdf:type owl:Class ;
+                      rdfs:subClassOf botsh-ext:ArchitecturalElement ;
+                      owl:disjointWith botsh-ext:BuildingInterface ,
+                                       botsh-ext:Thing ,
+                                       botsh-ext:Zone ;
+                      rdfs:comment "Constituent of a construction entity with a characteristic technical function. Example: Wall, Door, Window and Furniture"@en ;
+                      rdfs:label "Building Element"@en .
+
+
+###  http://purl.org/botsh-ext#BuildingInterface
+botsh-ext:BuildingInterface rdf:type owl:Class ;
+                        owl:disjointWith botsh-ext:Thing ,
+                                         botsh-ext:Zone ;
+                        rdfs:comment """A generic concept to qualify the relationship of two or more things in the world, where at least one is a building element or zone. Example:
+    - A door between one room and another."""@en ;
+                        rdfs:label "Building Interface"@en .
+
+
+###  http://purl.org/botsh-ext#BuildingStorey
+botsh-ext:BuildingStorey rdf:type owl:Class ;
+                     rdfs:subClassOf botsh-ext:Zone ;
+                     owl:disjointWith botsh-ext:NonBuilding ,
+                                      botsh-ext:Site ,
+                                      botsh-ext:Space ;
+                     rdfs:comment "A part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent. A botsh-ext:BuildingStorey is contained in one or more buildings, and is intended to contain one or more spaces that are horizontally connected. Storeys of a building are connected by means of vertical connections such as elevators and stairs. A botsh-ext:BuildingStorey encompasses both zones above and below ground, for example, a building with 21 floors above ground, one ground floor and 3 basements is equal to the sentence: A building has 25 instances of botsh-ext:BuildingStorey."@en ;
+                     rdfs:label "Building Storey"@en .
+
+
+###  http://purl.org/botsh-ext#Cantilever
+botsh-ext:Cantilever rdf:type owl:Class ;
+                 rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#Ceiling
+botsh-ext:Ceiling rdf:type owl:Class ;
+              rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#Chimney
+botsh-ext:Chimney rdf:type owl:Class ;
+              rdfs:subClassOf botsh-ext:BuildingElement .
+
+
+###  http://purl.org/botsh-ext#Column
+botsh-ext:Column rdf:type owl:Class ;
+             rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#CommercialBuilding
+botsh-ext:CommercialBuilding rdf:type owl:Class ;
+                         rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#CommonRoom
+botsh-ext:CommonRoom rdf:type owl:Class ;
+                 rdfs:subClassOf botsh-ext:Room .
+
+
+###  http://purl.org/botsh-ext#Dam
+botsh-ext:Dam rdf:type owl:Class ;
+          rdfs:subClassOf botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#Dome
+botsh-ext:Dome rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:Roof .
+
+
+###  http://purl.org/botsh-ext#Door
+botsh-ext:Door rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:BuildingElement .
+
+
+###  http://purl.org/botsh-ext#Doorway
+botsh-ext:Doorway rdf:type owl:Class ;
+              rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#DrawingRoom
+botsh-ext:DrawingRoom rdf:type owl:Class ;
+                  rdfs:subClassOf botsh-ext:Room .
+
+
+###  http://purl.org/botsh-ext#EducationalBuilding
+botsh-ext:EducationalBuilding rdf:type owl:Class ;
+                          rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#ElectricalDevices
+botsh-ext:ElectricalDevices rdf:type owl:Class ;
+                        rdfs:subClassOf botsh-ext:Thing .
+
+
+###  http://purl.org/botsh-ext#ElectricalSystem
+botsh-ext:ElectricalSystem rdf:type owl:Class ;
+                       rdfs:subClassOf botsh-ext:BuildingElement ;
+                       rdfs:comment "Other elements like switches, switchboards, wiring etc. can be sub classes of Electrical system."@en .
+
+
+###  http://purl.org/botsh-ext#ElectronicDevices
+botsh-ext:ElectronicDevices rdf:type owl:Class ;
+                        rdfs:subClassOf botsh-ext:Thing .
+
+
+###  http://purl.org/botsh-ext#Factory
+botsh-ext:Factory rdf:type owl:Class ;
+              rdfs:subClassOf botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#Floor
+botsh-ext:Floor rdf:type owl:Class ;
+            rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#Footing
+botsh-ext:Footing rdf:type owl:Class ;
+              rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#Foundation
+botsh-ext:Foundation rdf:type owl:Class ;
+                 rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#Furniture
+botsh-ext:Furniture rdf:type owl:Class ;
+                rdfs:subClassOf botsh-ext:BuildingElement .
+
+
+###  http://purl.org/botsh-ext#Greenhouse
+botsh-ext:Greenhouse rdf:type owl:Class ;
+                 rdfs:subClassOf botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#Hall
+botsh-ext:Hall rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:Room ;
+           rdfs:comment "A hall is a relatively large space enclosed by a roof and walls."@en .
+
+
+###  http://purl.org/botsh-ext#IndustrialBuilding
+botsh-ext:IndustrialBuilding rdf:type owl:Class ;
+                         rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#Kitchen
+botsh-ext:Kitchen rdf:type owl:Class ;
+              rdfs:subClassOf botsh-ext:Room .
+
+
+###  http://purl.org/botsh-ext#Lighting
+botsh-ext:Lighting rdf:type owl:Class ;
+               rdfs:subClassOf botsh-ext:BuildingElement .
+
+
+###  http://purl.org/botsh-ext#Lintel
+botsh-ext:Lintel rdf:type owl:Class ;
+             rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#LivingRoom
+botsh-ext:LivingRoom rdf:type owl:Class ;
+                 rdfs:subClassOf botsh-ext:Room .
+
+
+###  http://purl.org/botsh-ext#MedicalBuilding
+botsh-ext:MedicalBuilding rdf:type owl:Class ;
+                      rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#MicroController
+botsh-ext:MicroController rdf:type owl:Class ;
+                      rdfs:subClassOf botsh-ext:Thing .
+
+
+###  http://purl.org/botsh-ext#MilitaryBuilding
+botsh-ext:MilitaryBuilding rdf:type owl:Class ;
+                       rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#Monument
+botsh-ext:Monument rdf:type owl:Class ;
+               rdfs:subClassOf botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#NonBuilding
+botsh-ext:NonBuilding rdf:type owl:Class ;
+                  rdfs:subClassOf botsh-ext:Zone ;
+                  owl:disjointWith botsh-ext:Site ,
+                                   botsh-ext:Space ;
+                  rdfs:comment "A nonbuilding structure, also referred to simply as a structure, refers to any body or system of connected parts used to support a load that was not designed for continuous human occupancy."@en .
+
+
+###  http://purl.org/botsh-ext#Pier
+botsh-ext:Pier rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#Railing
+botsh-ext:Railing rdf:type owl:Class ;
+              rdfs:subClassOf botsh-ext:BuildingElement .
+
+
+###  http://purl.org/botsh-ext#Ramp
+botsh-ext:Ramp rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#ReligiousBuilding
+botsh-ext:ReligiousBuilding rdf:type owl:Class ;
+                        rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#ResidentialBuilding
+botsh-ext:ResidentialBuilding rdf:type owl:Class ;
+                          rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#Roof
+botsh-ext:Roof rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#Room
+botsh-ext:Room rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:Space .
+
+
+###  http://purl.org/botsh-ext#Shed
+botsh-ext:Shed rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#Site
+botsh-ext:Site rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:Zone ;
+           owl:disjointWith botsh-ext:Space ;
+           rdfs:comment "A part of the physical world or a virtual world that is inherently located in this world and having a 3D spatial extent. It is intended to contain or contains one or more buildings."@en ;
+           rdfs:label "Site"@en .
+
+
+###  http://purl.org/botsh-ext#Skyscrapers
+botsh-ext:Skyscrapers rdf:type owl:Class ;
+                  rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#Space
+botsh-ext:Space rdf:type owl:Class ;
+            rdfs:subClassOf botsh-ext:Zone ;
+            rdfs:comment "A part of the physical world or a virtual world whose 3D spatial extent is bounded actually or theoretically, and provides for certain functions within the zone it is contained in."@en ;
+            rdfs:label "Space"@en .
+
+
+###  http://purl.org/botsh-ext#Stair
+botsh-ext:Stair rdf:type owl:Class ;
+            rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#StructuralElement
+botsh-ext:StructuralElement rdf:type owl:Class ;
+                        rdfs:subClassOf botsh-ext:ArchitecturalElement .
+
+
+###  http://purl.org/botsh-ext#Studio
+botsh-ext:Studio rdf:type owl:Class ;
+             rdfs:subClassOf botsh-ext:Space .
+
+
+###  http://purl.org/botsh-ext#Thing
+botsh-ext:Thing rdf:type owl:Class ;
+            owl:equivalentClass onem2m:Thing ;
+            owl:disjointWith botsh-ext:Zone ;
+            rdfs:comment "Thing is any entity that is either electronic or hydraulic. May or may not have communication capabilities. If it can communicate using digital medium, it becomes a device which is a subclass of Thing."@en ;
+            rdfs:label "Thing" .
+
+
+###  http://purl.org/botsh-ext#Tower
+botsh-ext:Tower rdf:type owl:Class ;
+            rdfs:subClassOf botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#TransportBuilding
+botsh-ext:TransportBuilding rdf:type owl:Class ;
+                        rdfs:subClassOf botsh-ext:Building .
+
+
+###  http://purl.org/botsh-ext#Tunnel
+botsh-ext:Tunnel rdf:type owl:Class ;
+             rdfs:subClassOf botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#Wall
+botsh-ext:Wall rdf:type owl:Class ;
+           rdfs:subClassOf botsh-ext:StructuralElement .
+
+
+###  http://purl.org/botsh-ext#Wardrobe
+botsh-ext:Wardrobe rdf:type owl:Class ;
+               rdfs:subClassOf botsh-ext:BuildingElement .
+
+
+###  http://purl.org/botsh-ext#Warehouse
+botsh-ext:Warehouse rdf:type owl:Class ;
+                rdfs:subClassOf botsh-ext:NonBuilding .
+
+
+###  http://purl.org/botsh-ext#Window
+botsh-ext:Window rdf:type owl:Class ;
+             rdfs:subClassOf botsh-ext:BuildingElement .
+
+
+###  http://purl.org/botsh-ext#Workshop
+botsh-ext:Workshop rdf:type owl:Class ;
+               rdfs:subClassOf botsh-ext:Space .
+
+
+###  http://purl.org/botsh-ext#Zone
+botsh-ext:Zone rdf:type owl:Class ;
+           rdfs:comment "A part of the physical world or a virtual world that is inherently botsh-ext located in this world and has a 3D spatial extent; Sub-classes of botsh-ext:Zone include botsh-ext:Site, botsh-ext:Building, botsh-ext:BuildingStorey, or botsh-ext:Space.  An instance of botsh-ext:Zone can contain other botsh-ext:Zone instances, making it possible to group or subdivide zones. An instance of botsh-ext:Zone can be adjacent to or intersecting other botsh-ext:Zone instances. Finally, a botsh-ext:Zone can instantiate three relations to botsh-ext:BuildingElement, which are either contained in (botsh-ext:containsElement), adjacent to it (botsh-ext:adjacentElement) or intersecting (botsh-ext:intersectingElement)."@en ;
+           rdfs:label "Zone"@en .
+
+
+###  http://purl.org/toco/Device
+<http://purl.org/toco/Device> rdf:type owl:Class ;
+                              rdfs:subClassOf <http://purl.org/bosh#NetworkComponent> .
+
+
+###  http://purl.org/toco/Interface
+<http://purl.org/toco/Interface> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://purl.org/bosh#NetworkComponent> .
+
+
+###  http://purl.org/toco/Link
+<http://purl.org/toco/Link> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://purl.org/bosh#NetworkComponent> .
+
+
+###  http://www.w3.org/ns/mls#Run
+<http://www.w3.org/ns/mls#Run> rdf:type owl:Class .
+
+
+###  https://git.onem2m.org/MAS/BaseOntology/raw/master/base_ontology.owl#Thing
+onem2m:Thing rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
