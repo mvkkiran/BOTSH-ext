@@ -1,0 +1,1581 @@
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix botsh: <https://purl.org/botsh#> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix beo: <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix opm: <https://w3id.org/opm#> .
+@prefix lbd: <https://linkebuildingdata.org/LBD#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix seas: <https://w3id.org/seas/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#> .
+@prefix smls: <https://w3id.org/def/smls-owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix inst: <https://www.ugent.be/myAwesomeFirstBIMProject#> .
+@prefix mep: <http://pi.pauwel.be/voc/distributionelement#> .
+@prefix furn: <http://pi.pauwel.be/voc/furniture#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+inst:state_nodeMCU_9ff9cddd-95f0-4068-bc78-32610486770f_1676967982384
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.384901" ;
+        schema:value          "1" .
+
+inst:camera_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_camera_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982390 .
+
+inst:state_gridthree_9ff9cddd-95f0-4068-bc78-32610486770f_1676967982384
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.385011" ;
+        schema:value          "1" .
+
+inst:state_globalIdIfcRoot_65b1238c-5a7d-410f-8b34-872cb75c4b60_1676967982416
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.416063" ;
+        schema:value          "1biIECMdr13uiqXootN4jW" .
+
+inst:globalIdIfcRoot_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9_1676967982402 .
+
+inst:nameIfcRoot_fbbd70af-7f51-428b-a5d7-2aa450e6bb86
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_fbbd70af-7f51-428b-a5d7-2aa450e6bb86_1676967982403 .
+
+inst:state_globalIdIfcRoot_f78de779-e879-415d-b0a1-2fd89ac8f50e_1676967982404
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.404836" ;
+        schema:value          "3tZUTvw7b1NR2XBzYQoFKE" .
+
+inst:nameIfcRoot_06aae465-438b-49f2-a936-d406e3b7e2ed
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_06aae465-438b-49f2-a936-d406e3b7e2ed_1676967982412 .
+
+inst:sensor_edbf50c2-0b44-4d87-b880-13b91960a651
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_edbf50c2-0b44-4d87-b880-13b91960a651 ;
+        props:nameIfcRoot      inst:nameIfcRoot_edbf50c2-0b44-4d87-b880-13b91960a651 ;
+        props:gridthree        inst:gridthree_edbf50c2-0b44-4d87-b880-13b91960a651 ;
+        props:camera           inst:camera_edbf50c2-0b44-4d87-b880-13b91960a651 ;
+        rdf:type               botsh:Thing .
+
+inst:elevationWithFlooringIfcSpace_5a360d8b-99d0-418c-8b84-21fd9a2de521
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_elevationWithFlooringIfcSpace_5a360d8b-99d0-418c-8b84-21fd9a2de521_1676967982433 .
+
+inst:globalIdIfcRoot_c23b1461-5bf5-4f24-87c3-64e2b205e292
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_c23b1461-5bf5-4f24-87c3-64e2b205e292_1676967982373 .
+
+inst:buildingelementpart_8d2cd337-22fc-412f-921d-2c59cf2727bd
+        rdf:type               beo:BuildingElementPart-INSULATION ;
+        rdf:type               beo:BuildingElementPart ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_8d2cd337-22fc-412f-921d-2c59cf2727bd ;
+        props:nameIfcRoot      inst:nameIfcRoot_8d2cd337-22fc-412f-921d-2c59cf2727bd ;
+        rdf:type               botsh:BuildingElement .
+
+ifc:IfcPropertyBoundedValue
+        owl:disjointWith  ifc:IfcPropertySingleValue ;
+        owl:disjointWith  ifc:IfcPropertyReferenceValue ;
+        owl:disjointWith  ifc:IfcPropertyEnumeratedValue ;
+        owl:disjointWith  ifc:IfcPropertyListValue ;
+        owl:disjointWith  ifc:IfcPropertyTableValue ;
+        rdf:type          owl:Class .
+
+inst:state_sHT_b5dad875-fd8b-47a2-b83a-314a25a27847_1676967982413
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.413271" ;
+        schema:value          "3" .
+
+inst:IfcLabel_25031  <https://w3id.org/express#hasString>  "EXISTING" ;
+        rdf:type  ifc:IfcLabel .
+
+inst:globalIdIfcRoot_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6_1676967982417 .
+
+inst:state_exhaustcontroller_99534c19-b0f9-47a9-86a7-996d5f4a9f73_1676967982407
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.407488" ;
+        schema:value          "1" .
+
+inst:state_nameIfcRoot_edbf50c2-0b44-4d87-b880-13b91960a651_1676967982400
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.400982" ;
+        schema:value          "Camera - CSI Interface" .
+
+inst:state_sTA_fbbd70af-7f51-428b-a5d7-2aa450e6bb86_1676967982403
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.403272" ;
+        schema:value          "1" .
+
+inst:state_sensorboxtwo_65b1238c-5a7d-410f-8b34-872cb75c4b60_1676967982415
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.415493" ;
+        schema:value          "1" .
+
+inst:gridone_c15be9c1-935c-4a8b-ab27-7c8acc287cae
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridone_c15be9c1-935c-4a8b-ab27-7c8acc287cae_1676967982418 .
+
+inst:nameIfcRoot_60e094f6-1f98-4209-b892-bce8d16b6967
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_60e094f6-1f98-4209-b892-bce8d16b6967_1676967982435 .
+
+inst:state_globalIdIfcRoot_24598e46-91a0-4ea4-a1ca-9593c796e114_1676967982411
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.411642" ;
+        schema:value          "0aMOv6aQ1EfA7AbPF7bk4K" .
+
+inst:controller_99534c19-b0f9-47a9-86a7-996d5f4a9f73
+        rdf:type                 <https://pi.pauwel.be/voc/distributionelement#Controller-FLOATING> ;
+        rdf:type                 <https://pi.pauwel.be/voc/distributionelement#Controller> ;
+        props:globalIdIfcRoot    inst:globalIdIfcRoot_99534c19-b0f9-47a9-86a7-996d5f4a9f73 ;
+        props:nameIfcRoot        inst:nameIfcRoot_99534c19-b0f9-47a9-86a7-996d5f4a9f73 ;
+        props:exhaustcontroller  inst:exhaustcontroller_99534c19-b0f9-47a9-86a7-996d5f4a9f73 ;
+        rdf:type                 botsh:Thing .
+
+inst:state_controllerthree_449bac62-4f07-43f9-bb8c-ffa9c9d66b71_1676967982374
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.374777" ;
+        schema:value          "1" .
+
+inst:gridthree_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridthree_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6_1676967982416 .
+
+inst:nameIfcRoot_db8ac72e-4a3e-4492-bcbd-32d5664fa106
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_db8ac72e-4a3e-4492-bcbd-32d5664fa106_1676967982384 .
+
+inst:sensor_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566 ;
+        props:nameIfcRoot      inst:nameIfcRoot_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566 ;
+        props:gridtwo          inst:gridtwo_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566 ;
+        props:sTA              inst:sTA_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566 ;
+        rdf:type               botsh:Thing .
+
+inst:state_nameIfcRoot_a3a761e8-82c7-42ad-9636-a222d0614660_1676967982350
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.356814" ;
+        schema:value          "default site" .
+
+inst:sensor_adb4f449-504f-4314-8f92-c7c77ad75134
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_adb4f449-504f-4314-8f92-c7c77ad75134 ;
+        props:nameIfcRoot      inst:nameIfcRoot_adb4f449-504f-4314-8f92-c7c77ad75134 ;
+        props:nodeMCU          inst:nodeMCU_adb4f449-504f-4314-8f92-c7c77ad75134 ;
+        props:gridtwo          inst:gridtwo_adb4f449-504f-4314-8f92-c7c77ad75134 ;
+        rdf:type               botsh:Thing .
+
+inst:state_nameIfcRoot_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6_1676967982416
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.416955" ;
+        schema:value          "Sensor to Analog A0(Wireless Bluetooth - Software Serial)" .
+
+inst:state_elevationWithFlooringIfcSpace_3b95b182-ea41-4d34-a498-c2e9ab28f4bd_1676967982436
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.436255" ;
+        schema:value          "0."^^xsd:double .
+
+inst:IfcValue_List_25021
+        <https://w3id.org/list#hasContents>  inst:IfcLabel_25022 ;
+        rdf:type  ifc:IfcValue_List .
+
+inst:state_globalIdIfcRoot_4840b83b-c90e-411d-bb74-4b9cfa9687d7_1676967982406
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.406436" ;
+        schema:value          "18GBWxoGv17RjqIvpwbeVN" .
+
+inst:state_nameIfcRoot_f78de779-e879-415d-b0a1-2fd89ac8f50e_1676967982404
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.404738" ;
+        schema:value          "SIM7600 - LTE / 4G - UART2" .
+
+inst:door_ab71135f-61ff-4a93-a265-73e8c63a821a
+        rdf:type                    beo:Door-NOTDEFINED ;
+        rdf:type                    beo:Door ;
+        props:globalIdIfcRoot       inst:globalIdIfcRoot_ab71135f-61ff-4a93-a265-73e8c63a821a ;
+        props:overallWidthIfcDoor   inst:overallWidthIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a ;
+        props:nameIfcRoot           inst:nameIfcRoot_ab71135f-61ff-4a93-a265-73e8c63a821a ;
+        props:userDefinedOperationTypeIfcDoor  inst:userDefinedOperationTypeIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a ;
+        props:overallHeightIfcDoor  inst:overallHeightIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a ;
+        rdf:type                    botsh:BuildingElement .
+
+inst:globalIdIfcRoot_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8_1676967982392 .
+
+inst:sensor_c15be9c1-935c-4a8b-ab27-7c8acc287cae
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_c15be9c1-935c-4a8b-ab27-7c8acc287cae ;
+        props:nameIfcRoot      inst:nameIfcRoot_c15be9c1-935c-4a8b-ab27-7c8acc287cae ;
+        props:sHT              inst:sHT_c15be9c1-935c-4a8b-ab27-7c8acc287cae ;
+        props:gridone          inst:gridone_c15be9c1-935c-4a8b-ab27-7c8acc287cae ;
+        rdf:type               botsh:Thing .
+
+inst:nameIfcRoot_449bac62-4f07-43f9-bb8c-ffa9c9d66b71
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_449bac62-4f07-43f9-bb8c-ffa9c9d66b71_1676967982375 .
+
+inst:globalIdIfcRoot_4840b83b-c90e-411d-bb74-4b9cfa9687d7
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_4840b83b-c90e-411d-bb74-4b9cfa9687d7_1676967982406 .
+
+inst:globalIdIfcRoot_adb4f449-504f-4314-8f92-c7c77ad75134
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_adb4f449-504f-4314-8f92-c7c77ad75134_1676967982381 .
+
+ifc:IfcIdentifier  rdf:type  owl:Class .
+
+inst:firstGrid_3b95b182-ea41-4d34-a498-c2e9ab28f4bd
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_firstGrid_3b95b182-ea41-4d34-a498-c2e9ab28f4bd_1676967982436 .
+
+inst:nodeMCU_9ff9cddd-95f0-4068-bc78-32610486770f
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nodeMCU_9ff9cddd-95f0-4068-bc78-32610486770f_1676967982384 .
+
+inst:column_3023c76f-f018-442f-9efb-f86151ce00f2
+        rdf:type               beo:Column-COLUMN ;
+        rdf:type               beo:Column ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_3023c76f-f018-442f-9efb-f86151ce00f2 ;
+        props:nameIfcRoot      inst:nameIfcRoot_3023c76f-f018-442f-9efb-f86151ce00f2 ;
+        rdf:type               botsh:BuildingElement .
+
+inst:globalIdIfcRoot_598f5d59-bc06-4e24-84c8-468a72d73c09
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_598f5d59-bc06-4e24-84c8-468a72d73c09_1676967982409 .
+
+inst:state_sTA_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6_1676967982416
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.416464" ;
+        schema:value          "1" .
+
+inst:controller_24598e46-91a0-4ea4-a1ca-9593c796e114
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Controller-FLOATING> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Controller> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_24598e46-91a0-4ea4-a1ca-9593c796e114 ;
+        props:nameIfcRoot      inst:nameIfcRoot_24598e46-91a0-4ea4-a1ca-9593c796e114 ;
+        props:sensorboxone     inst:sensorboxone_24598e46-91a0-4ea4-a1ca-9593c796e114 ;
+        props:controllerone    inst:controllerone_24598e46-91a0-4ea4-a1ca-9593c796e114 ;
+        rdf:type               botsh:Thing .
+
+inst:state_gridone_f1648a43-04c9-4b24-b7be-199f12ce194a_1676967982410
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.410324" ;
+        schema:value          "1" .
+
+inst:IfcValue_List_25050
+        <https://w3id.org/list#hasContents>  inst:IfcLabel_25022 ;
+        rdf:type  ifc:IfcValue_List .
+
+inst:state_userDefinedOperationTypeIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.395428" ;
+        schema:value          ".NOTDEFINED." .
+
+inst:state_nameIfcRoot_24598e46-91a0-4ea4-a1ca-9593c796e114_1676967982411
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.411553" ;
+        schema:value          "Controller1" .
+
+inst:state_exhaust_28bd9d5d-8639-4547-b36b-092ba1d6aaf4_1676967982397
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.397679" ;
+        schema:value          "1" .
+
+inst:nameIfcRoot_3b95b182-ea41-4d34-a498-c2e9ab28f4bd
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_3b95b182-ea41-4d34-a498-c2e9ab28f4bd_1676967982436 .
+
+inst:state_gridtwo_c23b1461-5bf5-4f24-87c3-64e2b205e292_1676967982371
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.371627" ;
+        schema:value          "1" .
+
+inst:state_nameIfcRoot_4840b83b-c90e-411d-bb74-4b9cfa9687d7_1676967982406
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.406242" ;
+        schema:value          "Group#11 geometry" .
+
+inst:nameIfcRoot_915f7fa1-c2d3-42a2-bad0-ef710c824934
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_915f7fa1-c2d3-42a2-bad0-ef710c824934_1676967982387 .
+
+inst:userDefinedOperationTypeIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_userDefinedOperationTypeIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395 .
+
+inst:globalIdIfcRoot_5a360d8b-99d0-418c-8b84-21fd9a2de521
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_5a360d8b-99d0-418c-8b84-21fd9a2de521_1676967982433 .
+
+inst:state_thirdgrid_5a360d8b-99d0-418c-8b84-21fd9a2de521_1676967982434
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.434078" ;
+        schema:value          "1" .
+
+inst:nameIfcRoot_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e_1676967982419 .
+
+inst:state_globalIdIfcRoot_449bac62-4f07-43f9-bb8c-ffa9c9d66b71_1676967982375
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.375854" ;
+        schema:value          "14cwnYJmT3_RkC$wd9rcjn" .
+
+inst:state_gridtwo_f78de779-e879-415d-b0a1-2fd89ac8f50e_1676967982404
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.404317" ;
+        schema:value          "1" .
+
+inst:controller_65b1238c-5a7d-410f-8b34-872cb75c4b60
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Controller-FLOATING> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Controller> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_65b1238c-5a7d-410f-8b34-872cb75c4b60 ;
+        props:nameIfcRoot      inst:nameIfcRoot_65b1238c-5a7d-410f-8b34-872cb75c4b60 ;
+        props:controllertwo    inst:controllertwo_65b1238c-5a7d-410f-8b34-872cb75c4b60 ;
+        props:sensorboxtwo     inst:sensorboxtwo_65b1238c-5a7d-410f-8b34-872cb75c4b60 ;
+        rdf:type               botsh:Thing .
+
+inst:sensorboxtwo_65b1238c-5a7d-410f-8b34-872cb75c4b60
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sensorboxtwo_65b1238c-5a7d-410f-8b34-872cb75c4b60_1676967982415 .
+
+inst:state_gridtwo_915f7fa1-c2d3-42a2-bad0-ef710c824934_1676967982386
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.386467" ;
+        schema:value          "1" .
+
+inst:state_globalIdIfcRoot_b5dad875-fd8b-47a2-b83a-314a25a27847_1676967982414
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.414825" ;
+        schema:value          "2rsjXr$Oj7ehWwCKebedX7" .
+
+inst:elevationWithFlooringIfcSpace_3b95b182-ea41-4d34-a498-c2e9ab28f4bd
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_elevationWithFlooringIfcSpace_3b95b182-ea41-4d34-a498-c2e9ab28f4bd_1676967982436 .
+
+inst:roof_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8
+        rdf:type               beo:Roof-FLAT_ROOF ;
+        rdf:type               beo:Roof ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8 ;
+        props:nameIfcRoot      inst:nameIfcRoot_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8 ;
+        rdf:type               botsh:BuildingElement .
+
+inst:globalIdIfcRoot_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982391 .
+
+inst:globalIdIfcRoot_8d2cd337-22fc-412f-921d-2c59cf2727bd
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_8d2cd337-22fc-412f-921d-2c59cf2727bd_1676967982388 .
+
+inst:sensor_f78de779-e879-415d-b0a1-2fd89ac8f50e
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_f78de779-e879-415d-b0a1-2fd89ac8f50e ;
+        props:nameIfcRoot      inst:nameIfcRoot_f78de779-e879-415d-b0a1-2fd89ac8f50e ;
+        props:gridtwo          inst:gridtwo_f78de779-e879-415d-b0a1-2fd89ac8f50e ;
+        props:sIM              inst:sIM_f78de779-e879-415d-b0a1-2fd89ac8f50e ;
+        rdf:type               botsh:Thing .
+
+inst:state_elevationWithFlooringIfcSpace_da6f23f6-700a-4930-9e56-07d893f66eaf_1676967982438
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.438295" ;
+        schema:value          "0."^^xsd:double .
+
+inst:IfcValue_List_25024
+        <https://w3id.org/list#hasNext>  inst:IfcValue_List_25025 ;
+        <https://w3id.org/list#hasContents>  inst:IfcLabel_25031 ;
+        rdf:type  ifc:IfcValue_List .
+
+inst:gridtwo_915f7fa1-c2d3-42a2-bad0-ef710c824934
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridtwo_915f7fa1-c2d3-42a2-bad0-ef710c824934_1676967982386 .
+
+inst:site_a3a761e8-82c7-42ad-9636-a222d0614660
+        botsh:hasBuilding        inst:building_8c29b740-703c-4e58-b187-bfff96fdd7cb ;
+        rdf:type               botsh:Site ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_a3a761e8-82c7-42ad-9636-a222d0614660 ;
+        props:nameIfcRoot      inst:nameIfcRoot_a3a761e8-82c7-42ad-9636-a222d0614660 .
+
+inst:sTA_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sTA_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6_1676967982416 .
+
+inst:sensor_9ff9cddd-95f0-4068-bc78-32610486770f
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_9ff9cddd-95f0-4068-bc78-32610486770f ;
+        props:nameIfcRoot      inst:nameIfcRoot_9ff9cddd-95f0-4068-bc78-32610486770f ;
+        props:gridthree        inst:gridthree_9ff9cddd-95f0-4068-bc78-32610486770f ;
+        props:nodeMCU          inst:nodeMCU_9ff9cddd-95f0-4068-bc78-32610486770f ;
+        rdf:type               botsh:Thing .
+
+inst:globalIdIfcRoot_f78de779-e879-415d-b0a1-2fd89ac8f50e
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_f78de779-e879-415d-b0a1-2fd89ac8f50e_1676967982404 .
+
+inst:state_nameIfcRoot_449bac62-4f07-43f9-bb8c-ffa9c9d66b71_1676967982375
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.375738" ;
+        schema:value          "Contoller3" .
+
+inst:containedIn_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_containedIn_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982390 .
+
+inst:globalIdIfcRoot_3023c76f-f018-442f-9efb-f86151ce00f2
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_3023c76f-f018-442f-9efb-f86151ce00f2_1676967982393 .
+
+inst:globalIdIfcRoot_9ff9cddd-95f0-4068-bc78-32610486770f
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_9ff9cddd-95f0-4068-bc78-32610486770f_1676967982385 .
+
+inst:state_globalIdIfcRoot_99534c19-b0f9-47a9-86a7-996d5f4a9f73_1676967982408
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.408233" ;
+        schema:value          "2PKqmPiFb7gOQdcMrVIfzp" .
+
+ifc:IfcPropertyTableValue
+        owl:disjointWith  ifc:IfcPropertyEnumeratedValue ;
+        owl:disjointWith  ifc:IfcPropertyReferenceValue ;
+        owl:disjointWith  ifc:IfcPropertyListValue ;
+        rdf:type          owl:Class ;
+        owl:disjointWith  ifc:IfcPropertyBoundedValue ;
+        owl:disjointWith  ifc:IfcPropertySingleValue .
+
+inst:state_gridthree_b5dad875-fd8b-47a2-b83a-314a25a27847_1676967982413
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.413177" ;
+        schema:value          "1" .
+
+inst:gridone_fbbd70af-7f51-428b-a5d7-2aa450e6bb86
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridone_fbbd70af-7f51-428b-a5d7-2aa450e6bb86_1676967982403 .
+
+inst:sensor_b5dad875-fd8b-47a2-b83a-314a25a27847
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_b5dad875-fd8b-47a2-b83a-314a25a27847 ;
+        props:nameIfcRoot      inst:nameIfcRoot_b5dad875-fd8b-47a2-b83a-314a25a27847 ;
+        props:sHT              inst:sHT_b5dad875-fd8b-47a2-b83a-314a25a27847 ;
+        props:gridthree        inst:gridthree_b5dad875-fd8b-47a2-b83a-314a25a27847 ;
+        rdf:type               botsh:Thing .
+
+inst:globalIdIfcRoot_60e094f6-1f98-4209-b892-bce8d16b6967
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_60e094f6-1f98-4209-b892-bce8d16b6967_1676967982435 .
+
+inst:space_5a360d8b-99d0-418c-8b84-21fd9a2de521
+        props:thirdgrid        inst:thirdgrid_5a360d8b-99d0-418c-8b84-21fd9a2de521 ;
+        rdf:type               botsh:Space ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_5a360d8b-99d0-418c-8b84-21fd9a2de521 ;
+        props:nameIfcRoot      inst:nameIfcRoot_5a360d8b-99d0-418c-8b84-21fd9a2de521 ;
+        props:elevationWithFlooringIfcSpace  inst:elevationWithFlooringIfcSpace_5a360d8b-99d0-418c-8b84-21fd9a2de521 .
+
+inst:state_nameIfcRoot_b5dad875-fd8b-47a2-b83a-314a25a27847_1676967982414
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.414598" ;
+        schema:value          "SHT25 Temperature and Humidity - I2C" .
+
+inst:camera_edbf50c2-0b44-4d87-b880-13b91960a651
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_camera_edbf50c2-0b44-4d87-b880-13b91960a651_1676967982400 .
+
+inst:globalIdIfcRoot_a3a761e8-82c7-42ad-9636-a222d0614660
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_a3a761e8-82c7-42ad-9636-a222d0614660_1676967982362 .
+
+inst:state_globalIdIfcRoot_5a360d8b-99d0-418c-8b84-21fd9a2de521_1676967982433
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.433406" ;
+        schema:value          "1QDWsBcT11Z8k48VsQBUKX" .
+
+inst:state_nameIfcRoot_c15be9c1-935c-4a8b-ab27-7c8acc287cae_1676967982418
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.41895" ;
+        schema:value          "SHT25 Temperature and Humidity - I2C" .
+
+inst:gridthree_9ff9cddd-95f0-4068-bc78-32610486770f
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridthree_9ff9cddd-95f0-4068-bc78-32610486770f_1676967982384 .
+
+inst:nameIfcRoot_c23b1461-5bf5-4f24-87c3-64e2b205e292
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_c23b1461-5bf5-4f24-87c3-64e2b205e292_1676967982372 .
+
+inst:sensorboxthree_630450a4-0951-4ef7-af4e-cecd2e7a5a48
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sensorboxthree_630450a4-0951-4ef7-af4e-cecd2e7a5a48_1676967982377 .
+
+inst:nameIfcRoot_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6_1676967982416 .
+
+inst:state_sensorboxtwo_db8ac72e-4a3e-4492-bcbd-32d5664fa106_1676967982383
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.383133" ;
+        schema:value          "1" .
+
+inst:state_controllertwo_65b1238c-5a7d-410f-8b34-872cb75c4b60_1676967982415
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.415588" ;
+        schema:value          "1" .
+
+inst:state_globalIdIfcRoot_3023c76f-f018-442f-9efb-f86151ce00f2_1676967982393
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.393964" ;
+        schema:value          "0m8yTly1X4Bvxx_65HpW3o" .
+
+inst:state_globalIdIfcRoot_8d2cd337-22fc-412f-921d-2c59cf2727bd_1676967982388
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.388746" ;
+        schema:value          "2DBDCt8ln1Bv8TB5dF9oUz" .
+
+inst:state_nameIfcRoot_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566_1676967982417
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.417943" ;
+        schema:value          "Sensor to Analog A0(Wireless - Bluetooth - Software Serial )" .
+
+inst:state_camera_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982390
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.390578" ;
+        schema:value          "1" .
+
+ifc:IfcValue_List  rdf:type  owl:Class .
+
+inst:fan_28bd9d5d-8639-4547-b36b-092ba1d6aaf4
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Fan-CENTRIFUGALFORWARDCURVED> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Fan> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_28bd9d5d-8639-4547-b36b-092ba1d6aaf4 ;
+        props:nameIfcRoot      inst:nameIfcRoot_28bd9d5d-8639-4547-b36b-092ba1d6aaf4 ;
+        props:exhaust          inst:exhaust_28bd9d5d-8639-4547-b36b-092ba1d6aaf4 ;
+        rdf:type               botsh:Thing .
+
+inst:state_nameIfcRoot_da6f23f6-700a-4930-9e56-07d893f66eaf_1676967982438
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.438976" ;
+        schema:value          "Floor" .
+
+inst:secondgrid_60e094f6-1f98-4209-b892-bce8d16b6967
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_secondgrid_60e094f6-1f98-4209-b892-bce8d16b6967_1676967982435 .
+
+inst:state_nameIfcRoot_99534c19-b0f9-47a9-86a7-996d5f4a9f73_1676967982408
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.408039" ;
+        schema:value          "Exhaust_controller" .
+
+inst:nameIfcRoot_8c29b740-703c-4e58-b187-bfff96fdd7cb
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_8c29b740-703c-4e58-b187-bfff96fdd7cb_1676967982364 .
+
+inst:nameIfcRoot_4840b83b-c90e-411d-bb74-4b9cfa9687d7
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_4840b83b-c90e-411d-bb74-4b9cfa9687d7_1676967982406 .
+
+inst:nameIfcRoot_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8_1676967982392 .
+
+inst:globalIdIfcRoot_3b95b182-ea41-4d34-a498-c2e9ab28f4bd
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_3b95b182-ea41-4d34-a498-c2e9ab28f4bd_1676967982436 .
+
+inst:nameIfcRoot_adb4f449-504f-4314-8f92-c7c77ad75134
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_adb4f449-504f-4314-8f92-c7c77ad75134_1676967982381 .
+
+inst:state_sTA_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566_1676967982417
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.417502" ;
+        schema:value          "1" .
+
+inst:gridtwo_c23b1461-5bf5-4f24-87c3-64e2b205e292
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridtwo_c23b1461-5bf5-4f24-87c3-64e2b205e292_1676967982371 .
+
+inst:nameIfcRoot_598f5d59-bc06-4e24-84c8-468a72d73c09
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_598f5d59-bc06-4e24-84c8-468a72d73c09_1676967982409 .
+
+inst:state_nameIfcRoot_5a360d8b-99d0-418c-8b84-21fd9a2de521_1676967982433
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.433331" ;
+        schema:value          "Grid3" .
+
+inst:state_globalIdIfcRoot_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982391
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.39174" ;
+        schema:value          "0_5AULry50s9$sgtZWj7da" .
+
+inst:state_globalIdIfcRoot_edbf50c2-0b44-4d87-b880-13b91960a651_1676967982401
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.401087" ;
+        schema:value          "3jlr322qHDXxY04xaPOAPH" .
+
+inst:space_60e094f6-1f98-4209-b892-bce8d16b6967
+        props:secondgrid       inst:secondgrid_60e094f6-1f98-4209-b892-bce8d16b6967 ;
+        rdf:type               botsh:Space ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_60e094f6-1f98-4209-b892-bce8d16b6967 ;
+        props:nameIfcRoot      inst:nameIfcRoot_60e094f6-1f98-4209-b892-bce8d16b6967 ;
+        props:elevationWithFlooringIfcSpace  inst:elevationWithFlooringIfcSpace_60e094f6-1f98-4209-b892-bce8d16b6967 .
+
+inst:globalIdIfcRoot_c5474efd-3290-41ed-961c-551e23287e95
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_c5474efd-3290-41ed-961c-551e23287e95_1676967982367 .
+
+inst:state_nameIfcRoot_3023c76f-f018-442f-9efb-f86151ce00f2_1676967982393
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.39385" ;
+        schema:value          "Aluminium" .
+
+inst:globalIdIfcRoot_ab71135f-61ff-4a93-a265-73e8c63a821a
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395 .
+
+inst:state_globalIdIfcRoot_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.395904" ;
+        schema:value          "2hSHDVOVzAaw9bS_Z6Ee8Q" .
+
+inst:sHT_c15be9c1-935c-4a8b-ab27-7c8acc287cae
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sHT_c15be9c1-935c-4a8b-ab27-7c8acc287cae_1676967982418 .
+
+inst:state_nameIfcRoot_8d2cd337-22fc-412f-921d-2c59cf2727bd_1676967982388
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.388572" ;
+        schema:value          "Sensorstand" .
+
+inst:globalIdIfcRoot_99534c19-b0f9-47a9-86a7-996d5f4a9f73
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_99534c19-b0f9-47a9-86a7-996d5f4a9f73_1676967982408 .
+
+ifc:IfcPropertyListValue
+        owl:disjointWith  ifc:IfcPropertyBoundedValue ;
+        rdf:type          owl:Class ;
+        owl:disjointWith  ifc:IfcPropertySingleValue ;
+        owl:disjointWith  ifc:IfcPropertyEnumeratedValue ;
+        owl:disjointWith  ifc:IfcPropertyReferenceValue ;
+        owl:disjointWith  ifc:IfcPropertyTableValue .
+
+inst:globalIdIfcRoot_28bd9d5d-8639-4547-b36b-092ba1d6aaf4
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_28bd9d5d-8639-4547-b36b-092ba1d6aaf4_1676967982399 .
+
+inst:state_globalIdIfcRoot_598f5d59-bc06-4e24-84c8-468a72d73c09_1676967982409
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.409891" ;
+        schema:value          "1PZrrPl0PE98J8Heforpm9" .
+
+inst:state_globalIdIfcRoot_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6_1676967982417
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.417075" ;
+        schema:value          "1eEzFa855C6f$XFvt4hfVc" .
+
+inst:state_overallHeightIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.395172" ;
+        schema:value          "0."^^xsd:double .
+
+inst:gridtwo_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridtwo_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566_1676967982417 .
+
+inst:sTA_fbbd70af-7f51-428b-a5d7-2aa450e6bb86
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sTA_fbbd70af-7f51-428b-a5d7-2aa450e6bb86_1676967982403 .
+
+inst:globalIdIfcRoot_da6f23f6-700a-4930-9e56-07d893f66eaf
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_da6f23f6-700a-4930-9e56-07d893f66eaf_1676967982439 .
+
+ifc:IfcPropertyEnumeratedValue
+        owl:disjointWith  ifc:IfcPropertySingleValue ;
+        owl:disjointWith  ifc:IfcPropertyListValue ;
+        owl:disjointWith  ifc:IfcPropertyReferenceValue ;
+        owl:disjointWith  ifc:IfcPropertyTableValue ;
+        rdf:type          owl:Class ;
+        owl:disjointWith  ifc:IfcPropertyBoundedValue .
+
+inst:state_gridtwo_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566_1676967982417
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.417587" ;
+        schema:value          "1" .
+
+inst:state_globalIdIfcRoot_915f7fa1-c2d3-42a2-bad0-ef710c824934_1676967982387
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.387639" ;
+        schema:value          "2HNt_XmjD2ehhGxt4CWaaq" .
+
+inst:gridtwo_adb4f449-504f-4314-8f92-c7c77ad75134
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridtwo_adb4f449-504f-4314-8f92-c7c77ad75134_1676967982378 .
+
+ifc:IfcProperty  rdf:type  owl:Class ;
+        owl:disjointWith  ifc:IfcExtendedProperties ;
+        owl:disjointWith  ifc:IfcPreDefinedProperties ;
+        owl:disjointWith  ifc:IfcPropertyEnumeration .
+
+ifc:IfcPropertySingleValue
+        owl:disjointWith  ifc:IfcPropertyListValue ;
+        owl:disjointWith  ifc:IfcPropertyTableValue ;
+        owl:disjointWith  ifc:IfcPropertyBoundedValue ;
+        owl:disjointWith  ifc:IfcPropertyEnumeratedValue ;
+        owl:disjointWith  ifc:IfcPropertyReferenceValue ;
+        rdf:type          owl:Class .
+
+inst:state_nodeMCU_adb4f449-504f-4314-8f92-c7c77ad75134_1676967982379
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.37913" ;
+        schema:value          "1" .
+
+inst:state_firstGrid_3b95b182-ea41-4d34-a498-c2e9ab28f4bd_1676967982436
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.436894" ;
+        schema:value          "1" .
+
+inst:state_globalIdIfcRoot_630450a4-0951-4ef7-af4e-cecd2e7a5a48_1676967982378
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.378322" ;
+        schema:value          "1Z152a2L5EzwzEpiqkUbf8" .
+
+inst:state_gridthree_edbf50c2-0b44-4d87-b880-13b91960a651_1676967982400
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.400542" ;
+        schema:value          "1" .
+
+inst:state_nameIfcRoot_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982391
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.391577" ;
+        schema:value          "Camera - CSI Interface" .
+
+inst:state_nameIfcRoot_c23b1461-5bf5-4f24-87c3-64e2b205e292_1676967982372
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.372895" ;
+        schema:value          "Camera - CSI Interface" .
+
+inst:state_sHT_c15be9c1-935c-4a8b-ab27-7c8acc287cae_1676967982418
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.41849" ;
+        schema:value          "1" .
+
+inst:space_3b95b182-ea41-4d34-a498-c2e9ab28f4bd
+        props:firstGrid        inst:firstGrid_3b95b182-ea41-4d34-a498-c2e9ab28f4bd ;
+        rdf:type               botsh:Space ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_3b95b182-ea41-4d34-a498-c2e9ab28f4bd ;
+        props:nameIfcRoot      inst:nameIfcRoot_3b95b182-ea41-4d34-a498-c2e9ab28f4bd ;
+        props:elevationWithFlooringIfcSpace  inst:elevationWithFlooringIfcSpace_3b95b182-ea41-4d34-a498-c2e9ab28f4bd .
+
+inst:state_nameIfcRoot_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.395561" ;
+        schema:value          "Door" .
+
+inst:state_nameIfcRoot_28bd9d5d-8639-4547-b36b-092ba1d6aaf4_1676967982398
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.398943" ;
+        schema:value          "Exhaust" .
+
+inst:buildingelement_4840b83b-c90e-411d-bb74-4b9cfa9687d7
+        rdf:type               beo:BuildingElement-NOTDEFINED ;
+        rdf:type               beo:BuildingElement ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_4840b83b-c90e-411d-bb74-4b9cfa9687d7 ;
+        props:nameIfcRoot      inst:nameIfcRoot_4840b83b-c90e-411d-bb74-4b9cfa9687d7 ;
+        props:sensorboxone     inst:sensorboxone_4840b83b-c90e-411d-bb74-4b9cfa9687d7 ;
+        rdf:type               botsh:BuildingElement .
+
+inst:sensor_915f7fa1-c2d3-42a2-bad0-ef710c824934
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_915f7fa1-c2d3-42a2-bad0-ef710c824934 ;
+        props:nameIfcRoot      inst:nameIfcRoot_915f7fa1-c2d3-42a2-bad0-ef710c824934 ;
+        props:sHT              inst:sHT_915f7fa1-c2d3-42a2-bad0-ef710c824934 ;
+        props:gridtwo          inst:gridtwo_915f7fa1-c2d3-42a2-bad0-ef710c824934 ;
+        rdf:type               botsh:Thing .
+
+inst:state_nameIfcRoot_598f5d59-bc06-4e24-84c8-468a72d73c09_1676967982409
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.409746" ;
+        schema:value          "Ramp" .
+
+inst:IfcValue_List_25064
+        <https://w3id.org/list#hasContents>  inst:IfcLabel_25022 ;
+        rdf:type  ifc:IfcValue_List .
+
+inst:nameIfcRoot_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982391 .
+
+inst:sensor_f1648a43-04c9-4b24-b7be-199f12ce194a
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_f1648a43-04c9-4b24-b7be-199f12ce194a ;
+        props:nameIfcRoot      inst:nameIfcRoot_f1648a43-04c9-4b24-b7be-199f12ce194a ;
+        props:nodeMCU          inst:nodeMCU_f1648a43-04c9-4b24-b7be-199f12ce194a ;
+        props:gridone          inst:gridone_f1648a43-04c9-4b24-b7be-199f12ce194a ;
+        rdf:type               botsh:Thing .
+
+inst:state_gridthree_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6_1676967982416
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.416549" ;
+        schema:value          "1" .
+
+inst:sensorboxthree_449bac62-4f07-43f9-bb8c-ffa9c9d66b71
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sensorboxthree_449bac62-4f07-43f9-bb8c-ffa9c9d66b71_1676967982374 .
+
+inst:state_nodeMCU_f1648a43-04c9-4b24-b7be-199f12ce194a_1676967982410
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.410412" ;
+        schema:value          "1" .
+
+inst:nameIfcRoot_8d2cd337-22fc-412f-921d-2c59cf2727bd
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_8d2cd337-22fc-412f-921d-2c59cf2727bd_1676967982388 .
+
+inst:state_globalIdIfcRoot_9ff9cddd-95f0-4068-bc78-32610486770f_1676967982385
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.385573" ;
+        schema:value          "2V_StTbV10QBnuCc44XdSF" .
+
+inst:IfcPropertyEnumeratedValue_198
+        ifc:enumerationReference_IfcPropertyEnumeratedValue  inst:IfcPropertyEnumeration_199 ;
+        ifc:enumerationValues_IfcPropertyEnumeratedValue  inst:IfcValue_List_25021 ;
+        ifc:name_IfcProperty  inst:IfcIdentifier_25020 ;
+        rdf:type              ifc:IfcPropertyEnumeratedValue .
+
+inst:state_nameIfcRoot_915f7fa1-c2d3-42a2-bad0-ef710c824934_1676967982387
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.387514" ;
+        schema:value          "SHT25 Temperature and Humidity - I2C" .
+
+inst:state_globalIdIfcRoot_c5474efd-3290-41ed-961c-551e23287e95_1676967982367
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.367436" ;
+        schema:value          "35HqxzCf11xPOSLHuZA7wL" .
+
+inst:globalIdIfcRoot_f1648a43-04c9-4b24-b7be-199f12ce194a
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_f1648a43-04c9-4b24-b7be-199f12ce194a_1676967982410 .
+
+inst:state_globalIdIfcRoot_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8_1676967982392
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.392973" ;
+        schema:value          "1xtE$1O$f7wuovixmyYNBO" .
+
+inst:state_nameIfcRoot_630450a4-0951-4ef7-af4e-cecd2e7a5a48_1676967982378
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.378208" ;
+        schema:value          "Group#2 geometry" .
+
+inst:globalIdIfcRoot_edbf50c2-0b44-4d87-b880-13b91960a651
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_edbf50c2-0b44-4d87-b880-13b91960a651_1676967982401 .
+
+inst:nameIfcRoot_f78de779-e879-415d-b0a1-2fd89ac8f50e
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_f78de779-e879-415d-b0a1-2fd89ac8f50e_1676967982404 .
+
+ifc:IfcLabel  rdf:type  owl:Class .
+
+inst:nameIfcRoot_3023c76f-f018-442f-9efb-f86151ce00f2
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_3023c76f-f018-442f-9efb-f86151ce00f2_1676967982393 .
+
+inst:globalIdIfcRoot_65b1238c-5a7d-410f-8b34-872cb75c4b60
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_65b1238c-5a7d-410f-8b34-872cb75c4b60_1676967982416 .
+
+inst:space_da6f23f6-700a-4930-9e56-07d893f66eaf
+        props:totalfloor       inst:totalfloor_da6f23f6-700a-4930-9e56-07d893f66eaf ;
+        rdf:type               botsh:Space ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_da6f23f6-700a-4930-9e56-07d893f66eaf ;
+        props:nameIfcRoot      inst:nameIfcRoot_da6f23f6-700a-4930-9e56-07d893f66eaf ;
+        props:elevationWithFlooringIfcSpace  inst:elevationWithFlooringIfcSpace_da6f23f6-700a-4930-9e56-07d893f66eaf .
+
+inst:state_gridone_fbbd70af-7f51-428b-a5d7-2aa450e6bb86_1676967982403
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.403128" ;
+        schema:value          "1" .
+
+inst:nameIfcRoot_9ff9cddd-95f0-4068-bc78-32610486770f
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_9ff9cddd-95f0-4068-bc78-32610486770f_1676967982385 .
+
+inst:controllerthree_449bac62-4f07-43f9-bb8c-ffa9c9d66b71
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_controllerthree_449bac62-4f07-43f9-bb8c-ffa9c9d66b71_1676967982374 .
+
+inst:sensorboxtwo_db8ac72e-4a3e-4492-bcbd-32d5664fa106
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sensorboxtwo_db8ac72e-4a3e-4492-bcbd-32d5664fa106_1676967982383 .
+
+inst:state_globalIdIfcRoot_fbbd70af-7f51-428b-a5d7-2aa450e6bb86_1676967982403
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.403771" ;
+        schema:value          "3xlN2lVr52YwNNAgHGvhk6" .
+
+inst:gridthree_edbf50c2-0b44-4d87-b880-13b91960a651
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridthree_edbf50c2-0b44-4d87-b880-13b91960a651_1676967982400 .
+
+inst:turbovent_06aae465-438b-49f2-a936-d406e3b7e2ed
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_turbovent_06aae465-438b-49f2-a936-d406e3b7e2ed_1676967982412 .
+
+inst:exhaustcontroller_99534c19-b0f9-47a9-86a7-996d5f4a9f73
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_exhaustcontroller_99534c19-b0f9-47a9-86a7-996d5f4a9f73_1676967982407 .
+
+inst:state_sensorboxone_4840b83b-c90e-411d-bb74-4b9cfa9687d7_1676967982405
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.405545" ;
+        schema:value          "1" .
+
+inst:state_nameIfcRoot_8c29b740-703c-4e58-b187-bfff96fdd7cb_1676967982364
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.365004" ;
+        schema:value          "default building" .
+
+inst:nameIfcRoot_a3a761e8-82c7-42ad-9636-a222d0614660
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_a3a761e8-82c7-42ad-9636-a222d0614660_1676967982350 .
+
+inst:controller_449bac62-4f07-43f9-bb8c-ffa9c9d66b71
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Controller-FLOATING> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Controller> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_449bac62-4f07-43f9-bb8c-ffa9c9d66b71 ;
+        props:nameIfcRoot      inst:nameIfcRoot_449bac62-4f07-43f9-bb8c-ffa9c9d66b71 ;
+        props:controllerthree  inst:controllerthree_449bac62-4f07-43f9-bb8c-ffa9c9d66b71 ;
+        props:sensorboxthree   inst:sensorboxthree_449bac62-4f07-43f9-bb8c-ffa9c9d66b71 ;
+        rdf:type               botsh:Thing .
+
+inst:building_8c29b740-703c-4e58-b187-bfff96fdd7cb
+        botsh:hasStorey          inst:storey_c5474efd-3290-41ed-961c-551e23287e95 ;
+        rdf:type               botsh:Building ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_8c29b740-703c-4e58-b187-bfff96fdd7cb ;
+        props:nameIfcRoot      inst:nameIfcRoot_8c29b740-703c-4e58-b187-bfff96fdd7cb .
+
+inst:globalIdIfcRoot_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566_1676967982418 .
+
+inst:globalIdIfcRoot_8c29b740-703c-4e58-b187-bfff96fdd7cb
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_8c29b740-703c-4e58-b187-bfff96fdd7cb_1676967982365 .
+
+inst:sensor_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9 ;
+        props:nameIfcRoot      inst:nameIfcRoot_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9 ;
+        rdf:type               botsh:Thing .
+
+inst:state_nameIfcRoot_9ff9cddd-95f0-4068-bc78-32610486770f_1676967982385
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.385479" ;
+        schema:value          "Node MCU - UART2" .
+
+inst:state_nameIfcRoot_c5474efd-3290-41ed-961c-551e23287e95_1676967982367
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.367311" ;
+        schema:value          "default building storey" .
+
+inst:sHT_b5dad875-fd8b-47a2-b83a-314a25a27847
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sHT_b5dad875-fd8b-47a2-b83a-314a25a27847_1676967982413 .
+
+inst:state_nameIfcRoot_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8_1676967982392
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.392829" ;
+        schema:value          "Roof" .
+
+inst:state_globalIdIfcRoot_60e094f6-1f98-4209-b892-bce8d16b6967_1676967982435
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.435661" ;
+        schema:value          "1Wu9Js7vX22RYIlEZHQsbd" .
+
+inst:state_secondgrid_60e094f6-1f98-4209-b892-bce8d16b6967_1676967982435
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.435794" ;
+        schema:value          "1" .
+
+inst:gridtwo_f78de779-e879-415d-b0a1-2fd89ac8f50e
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridtwo_f78de779-e879-415d-b0a1-2fd89ac8f50e_1676967982404 .
+
+ifc:IfcPreDefinedProperties
+        owl:disjointWith  ifc:IfcProperty ;
+        owl:disjointWith  ifc:IfcPropertyEnumeration ;
+        owl:disjointWith  ifc:IfcExtendedProperties ;
+        rdf:type          owl:Class .
+
+inst:globalIdIfcRoot_c15be9c1-935c-4a8b-ab27-7c8acc287cae
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_c15be9c1-935c-4a8b-ab27-7c8acc287cae_1676967982419 .
+
+inst:state_nameIfcRoot_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9_1676967982401
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.402002" ;
+        schema:value          "Relay driver for exhaust fan control" .
+
+inst:state_controllerone_24598e46-91a0-4ea4-a1ca-9593c796e114_1676967982411
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.411103" ;
+        schema:value          "1" .
+
+ifc:IfcPropertyEnumeration
+        owl:disjointWith  ifc:IfcPreDefinedProperties ;
+        owl:disjointWith  ifc:IfcProperty ;
+        owl:disjointWith  ifc:IfcExtendedProperties ;
+        rdf:type          owl:Class .
+
+inst:buildingelement_630450a4-0951-4ef7-af4e-cecd2e7a5a48
+        rdf:type               beo:BuildingElement-NOTDEFINED ;
+        rdf:type               beo:BuildingElement ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_630450a4-0951-4ef7-af4e-cecd2e7a5a48 ;
+        props:nameIfcRoot      inst:nameIfcRoot_630450a4-0951-4ef7-af4e-cecd2e7a5a48 ;
+        props:sensorboxthree   inst:sensorboxthree_630450a4-0951-4ef7-af4e-cecd2e7a5a48 ;
+        rdf:type               botsh:BuildingElement .
+
+inst:sensor_c23b1461-5bf5-4f24-87c3-64e2b205e292
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_c23b1461-5bf5-4f24-87c3-64e2b205e292 ;
+        props:nameIfcRoot      inst:nameIfcRoot_c23b1461-5bf5-4f24-87c3-64e2b205e292 ;
+        props:camera           inst:camera_c23b1461-5bf5-4f24-87c3-64e2b205e292 ;
+        props:gridtwo          inst:gridtwo_c23b1461-5bf5-4f24-87c3-64e2b205e292 ;
+        rdf:type               botsh:Thing .
+
+inst:state_globalIdIfcRoot_a3a761e8-82c7-42ad-9636-a222d0614660_1676967982362
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.362808" ;
+        schema:value          "2Zfs7eWiT2hPOseYBGOKPW" .
+
+inst:state_sensorboxthree_449bac62-4f07-43f9-bb8c-ffa9c9d66b71_1676967982374
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.374622" ;
+        schema:value          "1" .
+
+inst:elevationWithFlooringIfcSpace_60e094f6-1f98-4209-b892-bce8d16b6967
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_elevationWithFlooringIfcSpace_60e094f6-1f98-4209-b892-bce8d16b6967_1676967982435 .
+
+inst:sensor_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6 ;
+        props:nameIfcRoot      inst:nameIfcRoot_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6 ;
+        props:gridthree        inst:gridthree_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6 ;
+        props:sTA              inst:sTA_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6 ;
+        rdf:type               botsh:Thing .
+
+inst:state_nameIfcRoot_fbbd70af-7f51-428b-a5d7-2aa450e6bb86_1676967982403
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.403675" ;
+        schema:value          "Sensor to Analog A0(Wireless Bluetooth - Software Serial)" .
+
+inst:state_globalIdIfcRoot_f1648a43-04c9-4b24-b7be-199f12ce194a_1676967982410
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.410713" ;
+        schema:value          "3nP8f31CbB9BU_6PyIpXbA" .
+
+inst:overallHeightIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_overallHeightIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395 .
+
+inst:state_globalIdIfcRoot_c15be9c1-935c-4a8b-ab27-7c8acc287cae_1676967982419
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.41903" ;
+        schema:value          "31M_d1arnAYwidV8hCA7ok" .
+
+inst:thirdgrid_5a360d8b-99d0-418c-8b84-21fd9a2de521
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_thirdgrid_5a360d8b-99d0-418c-8b84-21fd9a2de521_1676967982434 .
+
+inst:IfcValue_List_25025
+        <https://w3id.org/list#hasNext>  inst:IfcValue_List_25026 ;
+        <https://w3id.org/list#hasContents>  inst:IfcLabel_25032 ;
+        rdf:type  ifc:IfcValue_List .
+
+inst:IfcLabel_25022  <https://w3id.org/express#hasString>  "UNSET" ;
+        rdf:type  ifc:IfcLabel .
+
+inst:nameIfcRoot_c5474efd-3290-41ed-961c-551e23287e95
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_c5474efd-3290-41ed-961c-551e23287e95_1676967982367 .
+
+ifc:IfcExtendedProperties
+        owl:disjointWith  ifc:IfcPreDefinedProperties ;
+        rdf:type          owl:Class ;
+        owl:disjointWith  ifc:IfcPropertyEnumeration ;
+        owl:disjointWith  ifc:IfcProperty .
+
+inst:nameIfcRoot_ab71135f-61ff-4a93-a265-73e8c63a821a
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395 .
+
+inst:state_nameIfcRoot_60e094f6-1f98-4209-b892-bce8d16b6967_1676967982435
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.435581" ;
+        schema:value          "Grid2" .
+
+inst:state_globalIdIfcRoot_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566_1676967982418
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.41803" ;
+        schema:value          "3dNexwqA99Hh6YJ7xO3pLc" .
+
+inst:nameIfcRoot_99534c19-b0f9-47a9-86a7-996d5f4a9f73
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_99534c19-b0f9-47a9-86a7-996d5f4a9f73_1676967982408 .
+
+inst:nameIfcRoot_28bd9d5d-8639-4547-b36b-092ba1d6aaf4
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_28bd9d5d-8639-4547-b36b-092ba1d6aaf4_1676967982398 .
+
+inst:IfcPropertyEnumeratedValue_309
+        ifc:enumerationReference_IfcPropertyEnumeratedValue  inst:IfcPropertyEnumeration_199 ;
+        ifc:enumerationValues_IfcPropertyEnumeratedValue  inst:IfcValue_List_25050 ;
+        ifc:name_IfcProperty  inst:IfcIdentifier_25020 ;
+        rdf:type              ifc:IfcPropertyEnumeratedValue .
+
+inst:IfcPropertyEnumeratedValue_835
+        ifc:enumerationReference_IfcPropertyEnumeratedValue  inst:IfcPropertyEnumeration_199 ;
+        ifc:enumerationValues_IfcPropertyEnumeratedValue  inst:IfcValue_List_25064 ;
+        ifc:name_IfcProperty  inst:IfcIdentifier_25020 ;
+        rdf:type              ifc:IfcPropertyEnumeratedValue .
+
+inst:state_globalIdIfcRoot_da6f23f6-700a-4930-9e56-07d893f66eaf_1676967982439
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.439129" ;
+        schema:value          "3QRoFsS0f9C9vM1zYJzcwl" .
+
+inst:ramp_598f5d59-bc06-4e24-84c8-468a72d73c09
+        rdf:type               beo:Ramp-NOTDEFINED ;
+        rdf:type               beo:Ramp ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_598f5d59-bc06-4e24-84c8-468a72d73c09 ;
+        props:nameIfcRoot      inst:nameIfcRoot_598f5d59-bc06-4e24-84c8-468a72d73c09 ;
+        rdf:type               botsh:BuildingElement .
+
+inst:state_nameIfcRoot_f1648a43-04c9-4b24-b7be-199f12ce194a_1676967982410
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.410657" ;
+        schema:value          "Node MCU - UART2" .
+
+inst:nameIfcRoot_da6f23f6-700a-4930-9e56-07d893f66eaf
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_da6f23f6-700a-4930-9e56-07d893f66eaf_1676967982438 .
+
+inst:sIM_f78de779-e879-415d-b0a1-2fd89ac8f50e
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sIM_f78de779-e879-415d-b0a1-2fd89ac8f50e_1676967982404 .
+
+inst:IfcLabel_25030  <https://w3id.org/express#hasString>  "NEW" ;
+        rdf:type  ifc:IfcLabel .
+
+inst:globalIdIfcRoot_630450a4-0951-4ef7-af4e-cecd2e7a5a48
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_630450a4-0951-4ef7-af4e-cecd2e7a5a48_1676967982378 .
+
+inst:state_globalIdIfcRoot_3b95b182-ea41-4d34-a498-c2e9ab28f4bd_1676967982436
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.436394" ;
+        schema:value          "0xbR62wa5DDAIOmkchAFIz" .
+
+inst:state_ifcSensorType_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982390
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.390136" ;
+        schema:value          "Camera - CSI Interface" .
+
+inst:state_globalIdIfcRoot_db8ac72e-4a3e-4492-bcbd-32d5664fa106_1676967982384
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.38427" ;
+        schema:value          "3RYiSkIZv4ahozCjLcJw46" .
+
+inst:nameIfcRoot_24598e46-91a0-4ea4-a1ca-9593c796e114
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_24598e46-91a0-4ea4-a1ca-9593c796e114_1676967982411 .
+
+inst:state_nameIfcRoot_65b1238c-5a7d-410f-8b34-872cb75c4b60_1676967982415
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.415977" ;
+        schema:value          "Controller2" .
+
+inst:state_sHT_915f7fa1-c2d3-42a2-bad0-ef710c824934_1676967982386
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.386582" ;
+        schema:value          "1" .
+
+inst:state_totalfloor_da6f23f6-700a-4930-9e56-07d893f66eaf_1676967982439
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.439355" ;
+        schema:value          "1" .
+
+inst:state_elevationWithFlooringIfcSpace_5a360d8b-99d0-418c-8b84-21fd9a2de521_1676967982433
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.43319" ;
+        schema:value          "0."^^xsd:double .
+
+inst:state_camera_c23b1461-5bf5-4f24-87c3-64e2b205e292_1676967982372
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.372279" ;
+        schema:value          "1" .
+
+inst:ifcSensorType_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_ifcSensorType_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982390 .
+
+inst:elevationWithFlooringIfcSpace_da6f23f6-700a-4930-9e56-07d893f66eaf
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_elevationWithFlooringIfcSpace_da6f23f6-700a-4930-9e56-07d893f66eaf_1676967982438 .
+
+inst:controllertwo_65b1238c-5a7d-410f-8b34-872cb75c4b60
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_controllertwo_65b1238c-5a7d-410f-8b34-872cb75c4b60_1676967982415 .
+
+inst:IfcIdentifier_25020
+        <https://w3id.org/express#hasString>  "Status" ;
+        rdf:type  ifc:IfcIdentifier .
+
+inst:fan_06aae465-438b-49f2-a936-d406e3b7e2ed
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Fan-CENTRIFUGALFORWARDCURVED> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Fan> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_06aae465-438b-49f2-a936-d406e3b7e2ed ;
+        props:nameIfcRoot      inst:nameIfcRoot_06aae465-438b-49f2-a936-d406e3b7e2ed ;
+        props:turbovent        inst:turbovent_06aae465-438b-49f2-a936-d406e3b7e2ed ;
+        rdf:type               botsh:Thing .
+
+inst:state_globalIdIfcRoot_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e_1676967982419
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.419973" ;
+        schema:value          "2RR8z2WBz128$yN_TJqjKk" .
+
+inst:buildingelement_db8ac72e-4a3e-4492-bcbd-32d5664fa106
+        rdf:type               beo:BuildingElement-NOTDEFINED ;
+        rdf:type               beo:BuildingElement ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_db8ac72e-4a3e-4492-bcbd-32d5664fa106 ;
+        props:nameIfcRoot      inst:nameIfcRoot_db8ac72e-4a3e-4492-bcbd-32d5664fa106 ;
+        props:sensorboxtwo     inst:sensorboxtwo_db8ac72e-4a3e-4492-bcbd-32d5664fa106 ;
+        rdf:type               botsh:BuildingElement .
+
+inst:sHT_915f7fa1-c2d3-42a2-bad0-ef710c824934
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sHT_915f7fa1-c2d3-42a2-bad0-ef710c824934_1676967982386 .
+
+inst:nameIfcRoot_f1648a43-04c9-4b24-b7be-199f12ce194a
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_f1648a43-04c9-4b24-b7be-199f12ce194a_1676967982410 .
+
+inst:IfcPropertyEnumeration_199
+        ifc:enumerationValues_IfcPropertyEnumeration  inst:IfcValue_List_25023 ;
+        ifc:name_IfcPropertyEnumeration  inst:IfcIdentifier_25020 ;
+        rdf:type  ifc:IfcPropertyEnumeration .
+
+inst:sTA_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sTA_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566_1676967982417 .
+
+inst:globalIdIfcRoot_b5dad875-fd8b-47a2-b83a-314a25a27847
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_b5dad875-fd8b-47a2-b83a-314a25a27847_1676967982414 .
+
+inst:state_nameIfcRoot_3b95b182-ea41-4d34-a498-c2e9ab28f4bd_1676967982436
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.436332" ;
+        schema:value          "Grid1" .
+
+inst:nameIfcRoot_edbf50c2-0b44-4d87-b880-13b91960a651
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_edbf50c2-0b44-4d87-b880-13b91960a651_1676967982400 .
+
+inst:state_globalIdIfcRoot_adb4f449-504f-4314-8f92-c7c77ad75134_1676967982381
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.382041" ;
+        schema:value          "2jjFH9K4z358_InyTwrr4q" .
+
+inst:state_nameIfcRoot_db8ac72e-4a3e-4492-bcbd-32d5664fa106_1676967982384
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.384124" ;
+        schema:value          "Group#12 geometry" .
+
+inst:sensor_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4 ;
+        props:nameIfcRoot      inst:nameIfcRoot_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4 ;
+        props:camera           inst:camera_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4 ;
+        props:containedIn      inst:containedIn_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4 ;
+        props:ifcSensorType    inst:ifcSensorType_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4 ;
+        rdf:type               botsh:Thing .
+
+inst:state_globalIdIfcRoot_c23b1461-5bf5-4f24-87c3-64e2b205e292_1676967982373
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.373018" ;
+        schema:value          "32EnHXM$LF98V3PEAo1UAI" .
+
+inst:sensor_fbbd70af-7f51-428b-a5d7-2aa450e6bb86
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor-CONDUCTANCESENSOR> ;
+        rdf:type               <https://pi.pauwel.be/voc/distributionelement#Sensor> ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_fbbd70af-7f51-428b-a5d7-2aa450e6bb86 ;
+        props:nameIfcRoot      inst:nameIfcRoot_fbbd70af-7f51-428b-a5d7-2aa450e6bb86 ;
+        props:sTA              inst:sTA_fbbd70af-7f51-428b-a5d7-2aa450e6bb86 ;
+        props:gridone          inst:gridone_fbbd70af-7f51-428b-a5d7-2aa450e6bb86 ;
+        rdf:type               botsh:Thing .
+
+inst:nameIfcRoot_65b1238c-5a7d-410f-8b34-872cb75c4b60
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_65b1238c-5a7d-410f-8b34-872cb75c4b60_1676967982415 .
+
+inst:state_globalIdIfcRoot_28bd9d5d-8639-4547-b36b-092ba1d6aaf4_1676967982399
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.399384" ;
+        schema:value          "0elPrTXZb5HxDh2IkXrghq" .
+
+inst:sensorboxone_24598e46-91a0-4ea4-a1ca-9593c796e114
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sensorboxone_24598e46-91a0-4ea4-a1ca-9593c796e114_1676967982411 .
+
+inst:gridthree_b5dad875-fd8b-47a2-b83a-314a25a27847
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridthree_b5dad875-fd8b-47a2-b83a-314a25a27847_1676967982413 .
+
+inst:state_gridone_c15be9c1-935c-4a8b-ab27-7c8acc287cae_1676967982418
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.418411" ;
+        schema:value          "1" .
+
+inst:state_gridtwo_adb4f449-504f-4314-8f92-c7c77ad75134_1676967982378
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.379011" ;
+        schema:value          "1" .
+
+inst:globalIdIfcRoot_fbbd70af-7f51-428b-a5d7-2aa450e6bb86
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_fbbd70af-7f51-428b-a5d7-2aa450e6bb86_1676967982403 .
+
+inst:globalIdIfcRoot_06aae465-438b-49f2-a936-d406e3b7e2ed
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_06aae465-438b-49f2-a936-d406e3b7e2ed_1676967982412 .
+
+inst:nodeMCU_f1648a43-04c9-4b24-b7be-199f12ce194a
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nodeMCU_f1648a43-04c9-4b24-b7be-199f12ce194a_1676967982410 .
+
+inst:nameIfcRoot_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566_1676967982417 .
+
+inst:state_nameIfcRoot_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e_1676967982419
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.419878" ;
+        schema:value          "Wall" .
+
+ifc:IfcPropertyReferenceValue
+        owl:disjointWith  ifc:IfcPropertySingleValue ;
+        owl:disjointWith  ifc:IfcPropertyBoundedValue ;
+        owl:disjointWith  ifc:IfcPropertyEnumeratedValue ;
+        owl:disjointWith  ifc:IfcPropertyListValue ;
+        owl:disjointWith  ifc:IfcPropertyTableValue ;
+        rdf:type          owl:Class .
+
+inst:totalfloor_da6f23f6-700a-4930-9e56-07d893f66eaf
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_totalfloor_da6f23f6-700a-4930-9e56-07d893f66eaf_1676967982439 .
+
+inst:nameIfcRoot_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9_1676967982401 .
+
+inst:state_nameIfcRoot_adb4f449-504f-4314-8f92-c7c77ad75134_1676967982381
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.381372" ;
+        schema:value          "Node MCU - soft serial" .
+
+inst:nameIfcRoot_c15be9c1-935c-4a8b-ab27-7c8acc287cae
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_c15be9c1-935c-4a8b-ab27-7c8acc287cae_1676967982418 .
+
+inst:state_sensorboxthree_630450a4-0951-4ef7-af4e-cecd2e7a5a48_1676967982377
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.377218" ;
+        schema:value          "1" .
+
+inst:camera_c23b1461-5bf5-4f24-87c3-64e2b205e292
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_camera_c23b1461-5bf5-4f24-87c3-64e2b205e292_1676967982372 .
+
+inst:globalIdIfcRoot_db8ac72e-4a3e-4492-bcbd-32d5664fa106
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_db8ac72e-4a3e-4492-bcbd-32d5664fa106_1676967982384 .
+
+inst:globalIdIfcRoot_449bac62-4f07-43f9-bb8c-ffa9c9d66b71
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_449bac62-4f07-43f9-bb8c-ffa9c9d66b71_1676967982375 .
+
+inst:controllerone_24598e46-91a0-4ea4-a1ca-9593c796e114
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_controllerone_24598e46-91a0-4ea4-a1ca-9593c796e114_1676967982411 .
+
+inst:storey_c5474efd-3290-41ed-961c-551e23287e95
+        botsh:containsThing    inst:fan_28bd9d5d-8639-4547-b36b-092ba1d6aaf4 ;
+        botsh:containsThing    inst:sensor_915f7fa1-c2d3-42a2-bad0-ef710c824934 ;
+        botsh:containsElement    inst:buildingelement_db8ac72e-4a3e-4492-bcbd-32d5664fa106 ;
+        botsh:hasSpace           inst:space_3b95b182-ea41-4d34-a498-c2e9ab28f4bd ;
+        botsh:hasSpace           inst:space_da6f23f6-700a-4930-9e56-07d893f66eaf ;
+        botsh:containsThing    inst:sensor_e75e8efa-d0a2-4946-b1a2-4c7ed80f3566 ;
+        botsh:containsThing    inst:sensor_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9 ;
+        botsh:containsThing    inst:sensor_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4 ;
+        botsh:containsThing    inst:sensor_c23b1461-5bf5-4f24-87c3-64e2b205e292 ;
+        props:nameIfcRoot      inst:nameIfcRoot_c5474efd-3290-41ed-961c-551e23287e95 ;
+        botsh:containsThing    inst:sensor_f1648a43-04c9-4b24-b7be-199f12ce194a ;
+        botsh:containsThing    inst:sensor_9ff9cddd-95f0-4068-bc78-32610486770f ;
+        botsh:containsThing    inst:sensor_adb4f449-504f-4314-8f92-c7c77ad75134 ;
+        botsh:hasSpace           inst:space_60e094f6-1f98-4209-b892-bce8d16b6967 ;
+        botsh:containsElement    inst:door_ab71135f-61ff-4a93-a265-73e8c63a821a ;
+        botsh:containsThing    inst:sensor_f78de779-e879-415d-b0a1-2fd89ac8f50e ;
+        botsh:containsElement    inst:roof_7bdcefc1-63fa-47eb-8cb9-b3bc3c8972d8 ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_c5474efd-3290-41ed-961c-551e23287e95 ;
+        botsh:containsThing    inst:sensor_683bd3e4-2051-4c1a-9fe1-3f9dc4ae97e6 ;
+        botsh:containsThing    inst:controller_65b1238c-5a7d-410f-8b34-872cb75c4b60 ;
+        botsh:containsElement    inst:wall_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e ;
+        botsh:containsElement    inst:column_3023c76f-f018-442f-9efb-f86151ce00f2 ;
+        botsh:containsThing    inst:controller_24598e46-91a0-4ea4-a1ca-9593c796e114 ;
+        rdf:type               botsh:BuildingStorey ;
+        botsh:containsElement    inst:buildingelementpart_8d2cd337-22fc-412f-921d-2c59cf2727bd ;
+        botsh:containsThing    inst:sensor_b5dad875-fd8b-47a2-b83a-314a25a27847 ;
+        botsh:containsThing    inst:sensor_fbbd70af-7f51-428b-a5d7-2aa450e6bb86 ;
+        botsh:hasSpace           inst:space_5a360d8b-99d0-418c-8b84-21fd9a2de521 ;
+        botsh:containsThing    inst:sensor_edbf50c2-0b44-4d87-b880-13b91960a651 ;
+        botsh:containsThing    inst:controller_449bac62-4f07-43f9-bb8c-ffa9c9d66b71 ;
+        botsh:containsElement    inst:ramp_598f5d59-bc06-4e24-84c8-468a72d73c09 ;
+        botsh:containsThing    inst:controller_99534c19-b0f9-47a9-86a7-996d5f4a9f73 ;
+        botsh:containsElement    inst:buildingelement_4840b83b-c90e-411d-bb74-4b9cfa9687d7 ;
+        botsh:containsThing    inst:sensor_c15be9c1-935c-4a8b-ab27-7c8acc287cae ;
+        botsh:containsThing    inst:fan_06aae465-438b-49f2-a936-d406e3b7e2ed ;
+        botsh:containsElement    inst:buildingelement_630450a4-0951-4ef7-af4e-cecd2e7a5a48 .
+
+inst:state_globalIdIfcRoot_8c29b740-703c-4e58-b187-bfff96fdd7cb_1676967982365
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.365192" ;
+        schema:value          "2CART0S3nEMB67l$_M$TVB" .
+
+inst:state_turbovent_06aae465-438b-49f2-a936-d406e3b7e2ed_1676967982412
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.412256" ;
+        schema:value          "1" .
+
+inst:state_globalIdIfcRoot_06aae465-438b-49f2-a936-d406e3b7e2ed_1676967982412
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.412738" ;
+        schema:value          "06gkHbGuj9ygasr0RZj_Bj" .
+
+inst:IfcValue_List_25023
+        <https://w3id.org/list#hasNext>  inst:IfcValue_List_25024 ;
+        <https://w3id.org/list#hasContents>  inst:IfcLabel_25030 ;
+        rdf:type  ifc:IfcValue_List .
+
+inst:wall_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e
+        rdf:type               beo:Wall-NOTDEFINED ;
+        rdf:type               beo:Wall ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e ;
+        props:nameIfcRoot      inst:nameIfcRoot_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e ;
+        rdf:type               botsh:BuildingElement .
+
+inst:state_camera_edbf50c2-0b44-4d87-b880-13b91960a651_1676967982400
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.400416" ;
+        schema:value          "1" .
+
+inst:overallWidthIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_overallWidthIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395 .
+
+inst:state_globalIdIfcRoot_8412ac2c-bd2e-4512-b1b5-462b48d8c7c9_1676967982402
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.402155" ;
+        schema:value          "244gmilIv54h6rHYj8sCV9" .
+
+inst:globalIdIfcRoot_24598e46-91a0-4ea4-a1ca-9593c796e114
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_24598e46-91a0-4ea4-a1ca-9593c796e114_1676967982411 .
+
+inst:state_containedIn_3e14a795-d7c1-40d8-9ff6-ab78e0b479e4_1676967982390
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.390362" ;
+        schema:value          "Grird One" .
+
+inst:state_sensorboxone_24598e46-91a0-4ea4-a1ca-9593c796e114_1676967982411
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.411197" ;
+        schema:value          "1" .
+
+inst:state_overallWidthIfcDoor_ab71135f-61ff-4a93-a265-73e8c63a821a_1676967982395
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.395706" ;
+        schema:value          "0."^^xsd:double .
+
+inst:state_nameIfcRoot_06aae465-438b-49f2-a936-d406e3b7e2ed_1676967982412
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.412638" ;
+        schema:value          "Turbovent" .
+
+inst:globalIdIfcRoot_915f7fa1-c2d3-42a2-bad0-ef710c824934
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_915f7fa1-c2d3-42a2-bad0-ef710c824934_1676967982387 .
+
+inst:nameIfcRoot_630450a4-0951-4ef7-af4e-cecd2e7a5a48
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_630450a4-0951-4ef7-af4e-cecd2e7a5a48_1676967982378 .
+
+inst:globalIdIfcRoot_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_globalIdIfcRoot_9b6c8f42-80bf-4108-8ffc-5fe753d2d52e_1676967982419 .
+
+inst:exhaust_28bd9d5d-8639-4547-b36b-092ba1d6aaf4
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_exhaust_28bd9d5d-8639-4547-b36b-092ba1d6aaf4_1676967982397 .
+
+inst:state_sIM_f78de779-e879-415d-b0a1-2fd89ac8f50e_1676967982404
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.404231" ;
+        schema:value          "1" .
+
+inst:nodeMCU_adb4f449-504f-4314-8f92-c7c77ad75134
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nodeMCU_adb4f449-504f-4314-8f92-c7c77ad75134_1676967982379 .
+
+inst:state_elevationWithFlooringIfcSpace_60e094f6-1f98-4209-b892-bce8d16b6967_1676967982435
+        rdf:type              opm:CurrentPropertyState ;
+        prov:generatedAtTime  "2023-02-21T13:56:22.435457" ;
+        schema:value          "0."^^xsd:double .
+
+inst:sensorboxone_4840b83b-c90e-411d-bb74-4b9cfa9687d7
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_sensorboxone_4840b83b-c90e-411d-bb74-4b9cfa9687d7_1676967982405 .
+
+inst:nameIfcRoot_5a360d8b-99d0-418c-8b84-21fd9a2de521
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_5a360d8b-99d0-418c-8b84-21fd9a2de521_1676967982433 .
+
+inst:gridone_f1648a43-04c9-4b24-b7be-199f12ce194a
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_gridone_f1648a43-04c9-4b24-b7be-199f12ce194a_1676967982410 .
+
+inst:nameIfcRoot_b5dad875-fd8b-47a2-b83a-314a25a27847
+        rdf:type              opm:Property ;
+        opm:hasPropertyState  inst:state_nameIfcRoot_b5dad875-fd8b-47a2-b83a-314a25a27847_1676967982414 .
