@@ -1,0 +1,3258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Building Topology Ontology for Smart Homes (botsh-ext)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/botsh-ext","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/botsh-ext","name":"Building Topology Ontology for Smart Homes (botsh-ext)", "headline":"Building Topology Ontology for Smart Homes - extended. BOTSH ontology is extended and aligned with ToCo communication ontology and ML-Schema ontology. Developed as part of PhD research work.", "datePublished":"2024-12-02", "version":"v.1.0", "author":[{"@type":"Person","name":"Ramesh Gowtham"},{"@type":"Person","name":"Vamsee Krishna Kiran Muppavarapu"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Building Topology Ontology for Smart Homes (botsh-ext)</h1>
+<h2>Release  2024-12-02</h2>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="http://purl.org/botsh-ext">http://purl.org/botsh-ext</a></dd>
+<dt>Revision:</dt>
+<dd>v.1.0</dd>
+<dt>Authors:</dt>
+<dd>Ramesh Gowtham</dd><dd>Vamsee Krishna Kiran Muppavarapu</dd>
+
+<dt>License: </dt><dd><a href="http://insertlicenseURIhere.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.org" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Ramesh Gowtham,Vamsee Krishna Kiran Muppavarapu. Building Topology Ontology for Smart Homes (botsh-ext). Revision: v.1.0.</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+Building Topology Ontology for Smart Homes - extended. BOTSH ontology is extended and aligned with ToCo communication ontology and ML-Schema ontology. Developed as part of PhD research work.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;http://purl.org/botsh-ext&gt;</td></tr>
+<tr><td><b>schema</b></td><td>&lt;https://schema.org&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>onem2m</b></td><td>&lt;https://git.onem2m.org/MAS/BaseOntology/raw/master/base_ontology.owl&gt;</td></tr>
+<tr><td><b>bot</b></td><td>&lt;https://w3id.org/bot&gt;</td></tr>
+<tr><td><b>dce</b></td><td>&lt;http://purl.org/dc/elements/1.1&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>voaf</b></td><td>&lt;http://purl.org/vocommons/voaf&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>vcard</b></td><td>&lt;http://www.w3.org/2006/vcard/ns&gt;</td></tr>
+<tr><td><b>bosh</b></td><td>&lt;http://purl.org/bosh&gt;</td></tr>
+<tr><td><b>dbo</b></td><td>&lt;http://dbpedia.org/ontology&gt;</td></tr>
+<tr><td><b>toco</b></td><td>&lt;http://purl.org/toco&gt;</td></tr>
+<tr><td><b>mls</b></td><td>&lt;http://www.w3.org/ns/mls&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
+<tr><td><b>vs</b></td><td>&lt;http://www.w3.org/2003/06/sw-vocab-status/ns&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Building Topology Ontology for Smart Homes (botsh-ext): Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://purl.org/bosh#ActuatingDevice" title="http://purl.org/bosh#ActuatingDevice">
+         <span>actuating device</span>
+      </a>
+   </li>
+   <li>
+      <a href="#AgriculturalBuilding" title="http://purl.org/botsh-ext#AgriculturalBuilding">
+         <span>agricultural building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#AnimalBuilding" title="http://purl.org/botsh-ext#AnimalBuilding">
+         <span>animal building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/bosh#Appliance" title="http://purl.org/bosh#Appliance">
+         <span>appliance</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Arch" title="http://purl.org/botsh-ext#Arch">
+         <span>arch</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">
+         <span>architectural element</span>
+      </a>
+   </li>
+   <li>
+      <a href="#BathRoom" title="http://purl.org/botsh-ext#BathRoom">
+         <span>bath room</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Beam" title="http://purl.org/botsh-ext#Beam">
+         <span>beam</span>
+      </a>
+   </li>
+   <li>
+      <a href="#BedRoom" title="http://purl.org/botsh-ext#BedRoom">
+         <span>bed room</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Bridge" title="http://purl.org/botsh-ext#Bridge">
+         <span>bridge</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+   </li>
+   <li>
+      <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+   </li>
+   <li>
+      <a href="#BuildingInterface" title="http://purl.org/botsh-ext#BuildingInterface">Building Interface</a>
+   </li>
+   <li>
+      <a href="#BuildingStorey" title="http://purl.org/botsh-ext#BuildingStorey">Building Storey</a>
+   </li>
+   <li>
+      <a href="#Cantilever" title="http://purl.org/botsh-ext#Cantilever">
+         <span>cantilever</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Ceiling" title="http://purl.org/botsh-ext#Ceiling">
+         <span>ceiling</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Chimney" title="http://purl.org/botsh-ext#Chimney">
+         <span>chimney</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Column" title="http://purl.org/botsh-ext#Column">
+         <span>column</span>
+      </a>
+   </li>
+   <li>
+      <a href="#CommercialBuilding" title="http://purl.org/botsh-ext#CommercialBuilding">
+         <span>commercial building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#CommonRoom" title="http://purl.org/botsh-ext#CommonRoom">
+         <span>common room</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Dam" title="http://purl.org/botsh-ext#Dam">
+         <span>dam</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/toco/Device" title="http://purl.org/toco/Device">
+         <span>device</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Dome" title="http://purl.org/botsh-ext#Dome">
+         <span>dome</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Door" title="http://purl.org/botsh-ext#Door">
+         <span>door</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Doorway" title="http://purl.org/botsh-ext#Doorway">
+         <span>doorway</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DrawingRoom" title="http://purl.org/botsh-ext#DrawingRoom">
+         <span>drawing room</span>
+      </a>
+   </li>
+   <li>
+      <a href="#EducationalBuilding" title="http://purl.org/botsh-ext#EducationalBuilding">
+         <span>educational building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ElectricalDevices" title="http://purl.org/botsh-ext#ElectricalDevices">
+         <span>electrical devices</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ElectricalSystem" title="http://purl.org/botsh-ext#ElectricalSystem">
+         <span>electrical system</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ElectronicDevices" title="http://purl.org/botsh-ext#ElectronicDevices">
+         <span>electronic devices</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Factory" title="http://purl.org/botsh-ext#Factory">
+         <span>factory</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Floor" title="http://purl.org/botsh-ext#Floor">
+         <span>floor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Footing" title="http://purl.org/botsh-ext#Footing">
+         <span>footing</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Foundation" title="http://purl.org/botsh-ext#Foundation">
+         <span>foundation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Furniture" title="http://purl.org/botsh-ext#Furniture">
+         <span>furniture</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Greenhouse" title="http://purl.org/botsh-ext#Greenhouse">
+         <span>greenhouse</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Hall" title="http://purl.org/botsh-ext#Hall">
+         <span>hall</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IndustrialBuilding" title="http://purl.org/botsh-ext#IndustrialBuilding">
+         <span>industrial building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/toco/Interface" title="http://purl.org/toco/Interface">
+         <span>interface</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Kitchen" title="http://purl.org/botsh-ext#Kitchen">
+         <span>kitchen</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Lighting" title="http://purl.org/botsh-ext#Lighting">
+         <span>lighting</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/toco/Link" title="http://purl.org/toco/Link">
+         <span>link</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Lintel" title="http://purl.org/botsh-ext#Lintel">
+         <span>lintel</span>
+      </a>
+   </li>
+   <li>
+      <a href="#LivingRoom" title="http://purl.org/botsh-ext#LivingRoom">
+         <span>living room</span>
+      </a>
+   </li>
+   <li>
+      <a href="#MedicalBuilding" title="http://purl.org/botsh-ext#MedicalBuilding">
+         <span>medical building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#MicroController" title="http://purl.org/botsh-ext#MicroController">
+         <span>micro controller</span>
+      </a>
+   </li>
+   <li>
+      <a href="#MilitaryBuilding" title="http://purl.org/botsh-ext#MilitaryBuilding">
+         <span>military building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Monument" title="http://purl.org/botsh-ext#Monument">
+         <span>monument</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/bosh#NetworkComponent" title="http://purl.org/bosh#NetworkComponent">
+         <span>network component</span>
+      </a>
+   </li>
+   <li>
+      <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">
+         <span>non building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Pier" title="http://purl.org/botsh-ext#Pier">
+         <span>pier</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Railing" title="http://purl.org/botsh-ext#Railing">
+         <span>railing</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Ramp" title="http://purl.org/botsh-ext#Ramp">
+         <span>ramp</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ReligiousBuilding" title="http://purl.org/botsh-ext#ReligiousBuilding">
+         <span>religious building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ResidentialBuilding" title="http://purl.org/botsh-ext#ResidentialBuilding">
+         <span>residential building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Roof" title="http://purl.org/botsh-ext#Roof">
+         <span>roof</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Room" title="http://purl.org/botsh-ext#Room">
+         <span>room</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/bosh#SensingDevice" title="http://purl.org/bosh#SensingDevice">
+         <span>sensing device</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Shed" title="http://purl.org/botsh-ext#Shed">
+         <span>shed</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Site" title="http://purl.org/botsh-ext#Site">Site</a>
+   </li>
+   <li>
+      <a href="#Skyscrapers" title="http://purl.org/botsh-ext#Skyscrapers">
+         <span>skyscrapers</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+   </li>
+   <li>
+      <a href="#Stair" title="http://purl.org/botsh-ext#Stair">
+         <span>stair</span>
+      </a>
+   </li>
+   <li>
+      <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">
+         <span>structural element</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Studio" title="http://purl.org/botsh-ext#Studio">
+         <span>studio</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+   </li>
+   <li>
+      <a href="#Tower" title="http://purl.org/botsh-ext#Tower">
+         <span>tower</span>
+      </a>
+   </li>
+   <li>
+      <a href="#TransportBuilding" title="http://purl.org/botsh-ext#TransportBuilding">
+         <span>transport building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Tunnel" title="http://purl.org/botsh-ext#Tunnel">
+         <span>tunnel</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Wall" title="http://purl.org/botsh-ext#Wall">
+         <span>wall</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Wardrobe" title="http://purl.org/botsh-ext#Wardrobe">
+         <span>wardrobe</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Warehouse" title="http://purl.org/botsh-ext#Warehouse">
+         <span>warehouse</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Window" title="http://purl.org/botsh-ext#Window">
+         <span>window</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Workshop" title="http://purl.org/botsh-ext#Workshop">
+         <span>workshop</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#adjacentElement" title="http://purl.org/botsh-ext#adjacentElement">adjacent element</a>
+   </li>
+   <li>
+      <a href="#adjacentZone" title="http://purl.org/botsh-ext#adjacentZone">adjacent zone</a>
+   </li>
+   <li>
+      <a href="#containsElement" title="http://purl.org/botsh-ext#containsElement">contains element</a>
+   </li>
+   <li>
+      <a href="#containsThing" title="http://purl.org/botsh-ext#containsThing">contains thing</a>
+   </li>
+   <li>
+      <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+   </li>
+   <li>
+      <a href="#deviceMountedOn" title="http://purl.org/botsh-ext#deviceMountedOn">
+         <span>device mounted on</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasBuilding" title="http://purl.org/botsh-ext#hasBuilding">has building</a>
+   </li>
+   <li>
+      <a href="#hasElement" title="http://purl.org/botsh-ext#hasElement">has building element</a>
+   </li>
+   <li>
+      <a href="#hasMLRun" title="http://purl.org/botsh-ext#hasMLRun">
+         <span>has m l run</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasNetworkInterface" title="http://purl.org/botsh-ext#hasNetworkInterface">
+         <span>has network interface</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasNonBuilding" title="http://purl.org/botsh-ext#hasNonBuilding">
+         <span>has non building</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasSpace" title="http://purl.org/botsh-ext#hasSpace">has space</a>
+   </li>
+   <li>
+      <a href="#hasStorey" title="http://purl.org/botsh-ext#hasStorey">has storey</a>
+   </li>
+   <li>
+      <a href="#hasSubThing" title="http://purl.org/botsh-ext#hasSubThing">
+         <span>has sub thing</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasSubElement" title="http://purl.org/botsh-ext#hasSubElement">has sub-element</a>
+   </li>
+   <li>
+      <a href="#hasThing" title="http://purl.org/botsh-ext#hasThing">has Thing</a>
+   </li>
+   <li>
+      <a href="#interfaceOf" title="http://purl.org/botsh-ext#interfaceOf">interface of</a>
+   </li>
+   <li>
+      <a href="#intersectingElement" title="http://purl.org/botsh-ext#intersectingElement">intersecting element</a>
+   </li>
+   <li>
+      <a href="#intersectsZone" title="http://purl.org/botsh-ext#intersectsZone">intersects zone</a>
+   </li>
+   <li>
+      <a href="#isPartOf" title="http://purl.org/botsh-ext#isPartOf">
+         <span>is part of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#linkHasInterface" title="http://purl.org/botsh-ext#linkHasInterface">
+         <span>link has interface</span>
+      </a>
+   </li>
+   <li>
+      <a href="#usesNetworkCommunicationDevice"
+         title="http://purl.org/botsh-ext#usesNetworkCommunicationDevice">
+         <span>uses network communication device</span>
+      </a>
+   </li>
+</ul>
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for Building Topology Ontology for Smart Homes (botsh-ext) classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Building Topology Ontology for Smart Homes (botsh-ext).
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://purl.org/bosh#ActuatingDevice" title="http://purl.org/bosh#ActuatingDevice">
+            <span>actuating device</span>
+         </a>
+      </li>
+      <li>
+         <a href="#AgriculturalBuilding" title="http://purl.org/botsh-ext#AgriculturalBuilding">
+            <span>agricultural building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#AnimalBuilding" title="http://purl.org/botsh-ext#AnimalBuilding">
+            <span>animal building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/bosh#Appliance" title="http://purl.org/bosh#Appliance">
+            <span>appliance</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Arch" title="http://purl.org/botsh-ext#Arch">
+            <span>arch</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">
+            <span>architectural element</span>
+         </a>
+      </li>
+      <li>
+         <a href="#BathRoom" title="http://purl.org/botsh-ext#BathRoom">
+            <span>bath room</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Beam" title="http://purl.org/botsh-ext#Beam">
+            <span>beam</span>
+         </a>
+      </li>
+      <li>
+         <a href="#BedRoom" title="http://purl.org/botsh-ext#BedRoom">
+            <span>bed room</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Bridge" title="http://purl.org/botsh-ext#Bridge">
+            <span>bridge</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+      </li>
+      <li>
+         <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+      </li>
+      <li>
+         <a href="#BuildingInterface" title="http://purl.org/botsh-ext#BuildingInterface">Building Interface</a>
+      </li>
+      <li>
+         <a href="#BuildingStorey" title="http://purl.org/botsh-ext#BuildingStorey">Building Storey</a>
+      </li>
+      <li>
+         <a href="#Cantilever" title="http://purl.org/botsh-ext#Cantilever">
+            <span>cantilever</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Ceiling" title="http://purl.org/botsh-ext#Ceiling">
+            <span>ceiling</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Chimney" title="http://purl.org/botsh-ext#Chimney">
+            <span>chimney</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Column" title="http://purl.org/botsh-ext#Column">
+            <span>column</span>
+         </a>
+      </li>
+      <li>
+         <a href="#CommercialBuilding" title="http://purl.org/botsh-ext#CommercialBuilding">
+            <span>commercial building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#CommonRoom" title="http://purl.org/botsh-ext#CommonRoom">
+            <span>common room</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Dam" title="http://purl.org/botsh-ext#Dam">
+            <span>dam</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/toco/Device" title="http://purl.org/toco/Device">
+            <span>device</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Dome" title="http://purl.org/botsh-ext#Dome">
+            <span>dome</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Door" title="http://purl.org/botsh-ext#Door">
+            <span>door</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Doorway" title="http://purl.org/botsh-ext#Doorway">
+            <span>doorway</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DrawingRoom" title="http://purl.org/botsh-ext#DrawingRoom">
+            <span>drawing room</span>
+         </a>
+      </li>
+      <li>
+         <a href="#EducationalBuilding" title="http://purl.org/botsh-ext#EducationalBuilding">
+            <span>educational building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ElectricalDevices" title="http://purl.org/botsh-ext#ElectricalDevices">
+            <span>electrical devices</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ElectricalSystem" title="http://purl.org/botsh-ext#ElectricalSystem">
+            <span>electrical system</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ElectronicDevices" title="http://purl.org/botsh-ext#ElectronicDevices">
+            <span>electronic devices</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Factory" title="http://purl.org/botsh-ext#Factory">
+            <span>factory</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Floor" title="http://purl.org/botsh-ext#Floor">
+            <span>floor</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Footing" title="http://purl.org/botsh-ext#Footing">
+            <span>footing</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Foundation" title="http://purl.org/botsh-ext#Foundation">
+            <span>foundation</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Furniture" title="http://purl.org/botsh-ext#Furniture">
+            <span>furniture</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Greenhouse" title="http://purl.org/botsh-ext#Greenhouse">
+            <span>greenhouse</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Hall" title="http://purl.org/botsh-ext#Hall">
+            <span>hall</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IndustrialBuilding" title="http://purl.org/botsh-ext#IndustrialBuilding">
+            <span>industrial building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/toco/Interface" title="http://purl.org/toco/Interface">
+            <span>interface</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Kitchen" title="http://purl.org/botsh-ext#Kitchen">
+            <span>kitchen</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Lighting" title="http://purl.org/botsh-ext#Lighting">
+            <span>lighting</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/toco/Link" title="http://purl.org/toco/Link">
+            <span>link</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Lintel" title="http://purl.org/botsh-ext#Lintel">
+            <span>lintel</span>
+         </a>
+      </li>
+      <li>
+         <a href="#LivingRoom" title="http://purl.org/botsh-ext#LivingRoom">
+            <span>living room</span>
+         </a>
+      </li>
+      <li>
+         <a href="#MedicalBuilding" title="http://purl.org/botsh-ext#MedicalBuilding">
+            <span>medical building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#MicroController" title="http://purl.org/botsh-ext#MicroController">
+            <span>micro controller</span>
+         </a>
+      </li>
+      <li>
+         <a href="#MilitaryBuilding" title="http://purl.org/botsh-ext#MilitaryBuilding">
+            <span>military building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Monument" title="http://purl.org/botsh-ext#Monument">
+            <span>monument</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/bosh#NetworkComponent" title="http://purl.org/bosh#NetworkComponent">
+            <span>network component</span>
+         </a>
+      </li>
+      <li>
+         <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">
+            <span>non building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Pier" title="http://purl.org/botsh-ext#Pier">
+            <span>pier</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Railing" title="http://purl.org/botsh-ext#Railing">
+            <span>railing</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Ramp" title="http://purl.org/botsh-ext#Ramp">
+            <span>ramp</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ReligiousBuilding" title="http://purl.org/botsh-ext#ReligiousBuilding">
+            <span>religious building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ResidentialBuilding" title="http://purl.org/botsh-ext#ResidentialBuilding">
+            <span>residential building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Roof" title="http://purl.org/botsh-ext#Roof">
+            <span>roof</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Room" title="http://purl.org/botsh-ext#Room">
+            <span>room</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/bosh#SensingDevice" title="http://purl.org/bosh#SensingDevice">
+            <span>sensing device</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Shed" title="http://purl.org/botsh-ext#Shed">
+            <span>shed</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Site" title="http://purl.org/botsh-ext#Site">Site</a>
+      </li>
+      <li>
+         <a href="#Skyscrapers" title="http://purl.org/botsh-ext#Skyscrapers">
+            <span>skyscrapers</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+      </li>
+      <li>
+         <a href="#Stair" title="http://purl.org/botsh-ext#Stair">
+            <span>stair</span>
+         </a>
+      </li>
+      <li>
+         <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">
+            <span>structural element</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Studio" title="http://purl.org/botsh-ext#Studio">
+            <span>studio</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+      </li>
+      <li>
+         <a href="#Tower" title="http://purl.org/botsh-ext#Tower">
+            <span>tower</span>
+         </a>
+      </li>
+      <li>
+         <a href="#TransportBuilding" title="http://purl.org/botsh-ext#TransportBuilding">
+            <span>transport building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Tunnel" title="http://purl.org/botsh-ext#Tunnel">
+            <span>tunnel</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Wall" title="http://purl.org/botsh-ext#Wall">
+            <span>wall</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Wardrobe" title="http://purl.org/botsh-ext#Wardrobe">
+            <span>wardrobe</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Warehouse" title="http://purl.org/botsh-ext#Warehouse">
+            <span>warehouse</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Window" title="http://purl.org/botsh-ext#Window">
+            <span>window</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Workshop" title="http://purl.org/botsh-ext#Workshop">
+            <span>workshop</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://purl.org/bosh#ActuatingDevice">
+      <h3>actuating device<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/bosh#ActuatingDevice</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AgriculturalBuilding">
+      <h3>agricultural building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#AgriculturalBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AnimalBuilding">
+      <h3>animal building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#AnimalBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/bosh#Appliance">
+      <h3>appliance<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/bosh#Appliance</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ElectronicDevices" title="http://purl.org/botsh-ext#ElectronicDevices">electronic devices</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Arch">
+      <h3>arch<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Arch</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ArchitecturalElement">
+      <h3>architectural element<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#ArchitecturalElement</p>
+      <div class="comment">
+         <span class="markdown">Architectural elements are the unique details and component parts that, together, form the architectural style of houses, buildings and structures.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasThing" title="http://purl.org/botsh-ext#hasThing">has Thing</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSubElement" title="http://purl.org/botsh-ext#hasSubElement">has sub-element</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasElement" title="http://purl.org/botsh-ext#hasElement">has building element</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSubElement" title="http://purl.org/botsh-ext#hasSubElement">has sub-element</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isPartOf" title="http://purl.org/botsh-ext#isPartOf">is part of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BathRoom">
+      <h3>bath room<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#BathRoom</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Room" title="http://purl.org/botsh-ext#Room">room</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Beam">
+      <h3>beam<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Beam</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BedRoom">
+      <h3>bed room<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#BedRoom</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Room" title="http://purl.org/botsh-ext#Room">room</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Bridge">
+      <h3>bridge<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Bridge</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Building">
+      <h3>Building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Building</p>
+      <div class="comment">
+         <span class="markdown">A building or edifice, is an enclosed structure with a roof and walls standing more or less permanently in one place, such as a house and is specifically designed for human occupancy. A botsh-ext:Building is a part of the physical world or a virtual world that is inherently located in this world and having a 3D spatial extent, is contained in a building site, and can contain one or more building storeys that are vertically connected.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#AgriculturalBuilding" title="http://purl.org/botsh-ext#AgriculturalBuilding">agricultural building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#AnimalBuilding" title="http://purl.org/botsh-ext#AnimalBuilding">animal building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CommercialBuilding" title="http://purl.org/botsh-ext#CommercialBuilding">commercial building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#EducationalBuilding" title="http://purl.org/botsh-ext#EducationalBuilding">educational building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#IndustrialBuilding" title="http://purl.org/botsh-ext#IndustrialBuilding">industrial building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MedicalBuilding" title="http://purl.org/botsh-ext#MedicalBuilding">medical building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MilitaryBuilding" title="http://purl.org/botsh-ext#MilitaryBuilding">military building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ReligiousBuilding" title="http://purl.org/botsh-ext#ReligiousBuilding">religious building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ResidentialBuilding" title="http://purl.org/botsh-ext#ResidentialBuilding">residential building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Skyscrapers" title="http://purl.org/botsh-ext#Skyscrapers">skyscrapers</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#TransportBuilding" title="http://purl.org/botsh-ext#TransportBuilding">transport building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasBuilding" title="http://purl.org/botsh-ext#hasBuilding">has building</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#BuildingStorey" title="http://purl.org/botsh-ext#BuildingStorey">Building Storey</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Site" title="http://purl.org/botsh-ext#Site">Site</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BuildingElement">
+      <h3>Building Element<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#BuildingElement</p>
+      <div class="comment">
+         <span class="markdown">Constituent of a construction entity with a characteristic technical function. Example: Wall, Door, Window and Furniture</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">architectural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Chimney" title="http://purl.org/botsh-ext#Chimney">chimney</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Door" title="http://purl.org/botsh-ext#Door">door</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ElectricalSystem" title="http://purl.org/botsh-ext#ElectricalSystem">electrical system</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Furniture" title="http://purl.org/botsh-ext#Furniture">furniture</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Lighting" title="http://purl.org/botsh-ext#Lighting">lighting</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Railing" title="http://purl.org/botsh-ext#Railing">railing</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Wardrobe" title="http://purl.org/botsh-ext#Wardrobe">wardrobe</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Window" title="http://purl.org/botsh-ext#Window">window</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#interfaceOf" title="http://purl.org/botsh-ext#interfaceOf">interface of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#BuildingInterface" title="http://purl.org/botsh-ext#BuildingInterface">Building Interface</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BuildingInterface">
+      <h3>Building Interface<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#BuildingInterface</p>
+      <div class="comment">
+         <span class="markdown">A generic concept to qualify the relationship of two or more things in the world, where at least one is a building element or zone. Example:
+    - A door between one room and another.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#interfaceOf" title="http://purl.org/botsh-ext#interfaceOf">interface of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BuildingStorey">
+      <h3>Building Storey<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#BuildingStorey</p>
+      <div class="comment">
+         <span class="markdown">A part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent. A botsh-ext:BuildingStorey is contained in one or more buildings, and is intended to contain one or more spaces that are horizontally connected. Storeys of a building are connected by means of vertical connections such as elevators and stairs. A botsh-ext:BuildingStorey encompasses both zones above and below ground, for example, a building with 21 floors above ground, one ground floor and 3 basements is equal to the sentence: A building has 25 instances of botsh-ext:BuildingStorey.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasStorey" title="http://purl.org/botsh-ext#hasStorey">has storey</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Site" title="http://purl.org/botsh-ext#Site">Site</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Cantilever">
+      <h3>cantilever<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Cantilever</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Ceiling">
+      <h3>ceiling<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Ceiling</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Chimney">
+      <h3>chimney<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Chimney</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Column">
+      <h3>column<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Column</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CommercialBuilding">
+      <h3>commercial building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#CommercialBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CommonRoom">
+      <h3>common room<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#CommonRoom</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Room" title="http://purl.org/botsh-ext#Room">room</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Dam">
+      <h3>dam<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Dam</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/toco/Device">
+      <h3>device<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/toco/Device</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://purl.org/bosh#NetworkComponent" title="http://purl.org/bosh#NetworkComponent">network component</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasNetworkInterface" title="http://purl.org/botsh-ext#hasNetworkInterface">has network interface</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#usesNetworkCommunicationDevice"
+               title="http://purl.org/botsh-ext#usesNetworkCommunicationDevice">uses network communication device</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Dome">
+      <h3>dome<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Dome</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Roof" title="http://purl.org/botsh-ext#Roof">roof</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Door">
+      <h3>door<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Door</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Doorway">
+      <h3>doorway<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Doorway</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DrawingRoom">
+      <h3>drawing room<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#DrawingRoom</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Room" title="http://purl.org/botsh-ext#Room">room</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="EducationalBuilding">
+      <h3>educational building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#EducationalBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ElectricalDevices">
+      <h3>electrical devices<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#ElectricalDevices</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ElectricalSystem">
+      <h3>electrical system<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#ElectricalSystem</p>
+      <div class="comment">
+         <span class="markdown">Other elements like switches, switchboards, wiring etc. can be sub classes of Electrical system.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ElectronicDevices">
+      <h3>electronic devices<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#ElectronicDevices</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://purl.org/bosh#Appliance" title="http://purl.org/bosh#Appliance">appliance</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Factory">
+      <h3>factory<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Factory</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Floor">
+      <h3>floor<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Floor</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Footing">
+      <h3>footing<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Footing</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Foundation">
+      <h3>foundation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Foundation</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Furniture">
+      <h3>furniture<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Furniture</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Greenhouse">
+      <h3>greenhouse<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Greenhouse</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Hall">
+      <h3>hall<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Hall</p>
+      <div class="comment">
+         <span class="markdown">A hall is a relatively large space enclosed by a roof and walls.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Room" title="http://purl.org/botsh-ext#Room">room</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IndustrialBuilding">
+      <h3>industrial building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#IndustrialBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/toco/Interface">
+      <h3>interface<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/toco/Interface</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://purl.org/bosh#NetworkComponent" title="http://purl.org/bosh#NetworkComponent">network component</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasNetworkInterface" title="http://purl.org/botsh-ext#hasNetworkInterface">has network interface</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#linkHasInterface" title="http://purl.org/botsh-ext#linkHasInterface">link has interface</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Kitchen">
+      <h3>kitchen<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Kitchen</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Room" title="http://purl.org/botsh-ext#Room">room</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Lighting">
+      <h3>lighting<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Lighting</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/toco/Link">
+      <h3>link<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/toco/Link</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://purl.org/bosh#NetworkComponent" title="http://purl.org/bosh#NetworkComponent">network component</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#linkHasInterface" title="http://purl.org/botsh-ext#linkHasInterface">link has interface</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Lintel">
+      <h3>lintel<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Lintel</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="LivingRoom">
+      <h3>living room<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#LivingRoom</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Room" title="http://purl.org/botsh-ext#Room">room</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MedicalBuilding">
+      <h3>medical building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#MedicalBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MicroController">
+      <h3>micro controller<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#MicroController</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasMLRun" title="http://purl.org/botsh-ext#hasMLRun">has m l run</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MilitaryBuilding">
+      <h3>military building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#MilitaryBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Monument">
+      <h3>monument<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Monument</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/bosh#NetworkComponent">
+      <h3>network component<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/bosh#NetworkComponent</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://purl.org/toco/Device" title="http://purl.org/toco/Device">device</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/toco/Interface" title="http://purl.org/toco/Interface">interface</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/toco/Link" title="http://purl.org/toco/Link">link</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="NonBuilding">
+      <h3>non building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#NonBuilding</p>
+      <div class="comment">
+         <span class="markdown">A nonbuilding structure, also referred to simply as a structure, refers to any body or system of connected parts used to support a load that was not designed for continuous human occupancy.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Bridge" title="http://purl.org/botsh-ext#Bridge">bridge</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Dam" title="http://purl.org/botsh-ext#Dam">dam</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Factory" title="http://purl.org/botsh-ext#Factory">factory</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Greenhouse" title="http://purl.org/botsh-ext#Greenhouse">greenhouse</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Monument" title="http://purl.org/botsh-ext#Monument">monument</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Shed" title="http://purl.org/botsh-ext#Shed">shed</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Tower" title="http://purl.org/botsh-ext#Tower">tower</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Tunnel" title="http://purl.org/botsh-ext#Tunnel">tunnel</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Warehouse" title="http://purl.org/botsh-ext#Warehouse">warehouse</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasNonBuilding" title="http://purl.org/botsh-ext#hasNonBuilding">has non building</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#BuildingStorey" title="http://purl.org/botsh-ext#BuildingStorey">Building Storey</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Site" title="http://purl.org/botsh-ext#Site">Site</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Pier">
+      <h3>pier<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Pier</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Railing">
+      <h3>railing<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Railing</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Ramp">
+      <h3>ramp<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Ramp</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ReligiousBuilding">
+      <h3>religious building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#ReligiousBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ResidentialBuilding">
+      <h3>residential building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#ResidentialBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Roof">
+      <h3>roof<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Roof</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Dome" title="http://purl.org/botsh-ext#Dome">dome</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Room">
+      <h3>room<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Room</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#BathRoom" title="http://purl.org/botsh-ext#BathRoom">bath room</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#BedRoom" title="http://purl.org/botsh-ext#BedRoom">bed room</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CommonRoom" title="http://purl.org/botsh-ext#CommonRoom">common room</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#DrawingRoom" title="http://purl.org/botsh-ext#DrawingRoom">drawing room</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Hall" title="http://purl.org/botsh-ext#Hall">hall</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Kitchen" title="http://purl.org/botsh-ext#Kitchen">kitchen</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#LivingRoom" title="http://purl.org/botsh-ext#LivingRoom">living room</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/bosh#SensingDevice">
+      <h3>sensing device<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/bosh#SensingDevice</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Shed">
+      <h3>shed<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Shed</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Site">
+      <h3>Site<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Site</p>
+      <div class="comment">
+         <span class="markdown">A part of the physical world or a virtual world that is inherently located in this world and having a 3D spatial extent. It is intended to contain or contains one or more buildings.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#BuildingStorey" title="http://purl.org/botsh-ext#BuildingStorey">Building Storey</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Skyscrapers">
+      <h3>skyscrapers<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Skyscrapers</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Space">
+      <h3>Space<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Space</p>
+      <div class="comment">
+         <span class="markdown">A part of the physical world or a virtual world whose 3D spatial extent is bounded actually or theoretically, and provides for certain functions within the zone it is contained in.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Room" title="http://purl.org/botsh-ext#Room">room</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Studio" title="http://purl.org/botsh-ext#Studio">studio</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Workshop" title="http://purl.org/botsh-ext#Workshop">workshop</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSpace" title="http://purl.org/botsh-ext#hasSpace">has space</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#BuildingStorey" title="http://purl.org/botsh-ext#BuildingStorey">Building Storey</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Site" title="http://purl.org/botsh-ext#Site">Site</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Stair">
+      <h3>stair<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Stair</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="StructuralElement">
+      <h3>structural element<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#StructuralElement</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">architectural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Arch" title="http://purl.org/botsh-ext#Arch">arch</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Beam" title="http://purl.org/botsh-ext#Beam">beam</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Cantilever" title="http://purl.org/botsh-ext#Cantilever">cantilever</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Ceiling" title="http://purl.org/botsh-ext#Ceiling">ceiling</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Column" title="http://purl.org/botsh-ext#Column">column</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Doorway" title="http://purl.org/botsh-ext#Doorway">doorway</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Floor" title="http://purl.org/botsh-ext#Floor">floor</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Footing" title="http://purl.org/botsh-ext#Footing">footing</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Foundation" title="http://purl.org/botsh-ext#Foundation">foundation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Lintel" title="http://purl.org/botsh-ext#Lintel">lintel</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Pier" title="http://purl.org/botsh-ext#Pier">pier</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Ramp" title="http://purl.org/botsh-ext#Ramp">ramp</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Roof" title="http://purl.org/botsh-ext#Roof">roof</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Stair" title="http://purl.org/botsh-ext#Stair">stair</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Wall" title="http://purl.org/botsh-ext#Wall">wall</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Studio">
+      <h3>studio<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Studio</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Thing">
+      <h3>Thing<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Thing</p>
+      <div class="comment">
+         <span class="markdown">Thing is any entity that is either electronic or hydraulic. May or may not have communication capabilities. If it can communicate using digital medium, it becomes a device which is a subclass of Thing.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://git.onem2m.org/MAS/BaseOntology/raw/master/base_ontology.owl#Thing"
+               target="_blank"
+               title="https://git.onem2m.org/MAS/BaseOntology/raw/master/base_ontology.owl#Thing">thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://purl.org/bosh#ActuatingDevice" title="http://purl.org/bosh#ActuatingDevice">actuating device</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ElectricalDevices" title="http://purl.org/botsh-ext#ElectricalDevices">electrical devices</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ElectronicDevices" title="http://purl.org/botsh-ext#ElectronicDevices">electronic devices</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MicroController" title="http://purl.org/botsh-ext#MicroController">micro controller</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/bosh#NetworkComponent" title="http://purl.org/bosh#NetworkComponent">network component</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/bosh#SensingDevice" title="http://purl.org/bosh#SensingDevice">sensing device</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasSubThing" title="http://purl.org/botsh-ext#hasSubThing">has sub thing</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isPartOf" title="http://purl.org/botsh-ext#isPartOf">is part of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#usesNetworkCommunicationDevice"
+               title="http://purl.org/botsh-ext#usesNetworkCommunicationDevice">uses network communication device</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasThing" title="http://purl.org/botsh-ext#hasThing">has Thing</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSubThing" title="http://purl.org/botsh-ext#hasSubThing">has sub thing</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#BuildingInterface" title="http://purl.org/botsh-ext#BuildingInterface">Building Interface</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Tower">
+      <h3>tower<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Tower</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="TransportBuilding">
+      <h3>transport building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#TransportBuilding</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Tunnel">
+      <h3>tunnel<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Tunnel</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Wall">
+      <h3>wall<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Wall</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#StructuralElement" title="http://purl.org/botsh-ext#StructuralElement">structural element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Wardrobe">
+      <h3>wardrobe<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Wardrobe</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Warehouse">
+      <h3>warehouse<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Warehouse</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Window">
+      <h3>window<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Window</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Workshop">
+      <h3>workshop<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Workshop</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Zone">
+      <h3>Zone<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#Zone</p>
+      <div class="comment">
+         <span class="markdown">A part of the physical world or a virtual world that is inherently botsh-ext located in this world and has a 3D spatial extent; Sub-classes of botsh-ext:Zone include botsh-ext:Site, botsh-ext:Building, botsh-ext:BuildingStorey, or botsh-ext:Space.  An instance of botsh-ext:Zone can contain other botsh-ext:Zone instances, making it possible to group or subdivide zones. An instance of botsh-ext:Zone can be adjacent to or intersecting other botsh-ext:Zone instances. Finally, a botsh-ext:Zone can instantiate three relations to botsh-ext:BuildingElement, which are either contained in (botsh-ext:containsElement), adjacent to it (botsh-ext:adjacentElement) or intersecting (botsh-ext:intersectingElement).</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#BuildingStorey" title="http://purl.org/botsh-ext#BuildingStorey">Building Storey</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Site" title="http://purl.org/botsh-ext#Site">Site</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#adjacentZone" title="http://purl.org/botsh-ext#adjacentZone">adjacent zone</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasBuilding" title="http://purl.org/botsh-ext#hasBuilding">has building</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasElement" title="http://purl.org/botsh-ext#hasElement">has building element</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasNonBuilding" title="http://purl.org/botsh-ext#hasNonBuilding">has non building</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSpace" title="http://purl.org/botsh-ext#hasSpace">has space</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasStorey" title="http://purl.org/botsh-ext#hasStorey">has storey</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#intersectsZone" title="http://purl.org/botsh-ext#intersectsZone">intersects zone</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#adjacentZone" title="http://purl.org/botsh-ext#adjacentZone">adjacent zone</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#interfaceOf" title="http://purl.org/botsh-ext#interfaceOf">interface of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#intersectsZone" title="http://purl.org/botsh-ext#intersectsZone">intersects zone</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">architectural element</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#BuildingInterface" title="http://purl.org/botsh-ext#BuildingInterface">Building Interface</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#adjacentElement" title="http://purl.org/botsh-ext#adjacentElement">adjacent element</a>
+      </li>
+      <li>
+         <a href="#adjacentZone" title="http://purl.org/botsh-ext#adjacentZone">adjacent zone</a>
+      </li>
+      <li>
+         <a href="#containsElement" title="http://purl.org/botsh-ext#containsElement">contains element</a>
+      </li>
+      <li>
+         <a href="#containsThing" title="http://purl.org/botsh-ext#containsThing">contains thing</a>
+      </li>
+      <li>
+         <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+      </li>
+      <li>
+         <a href="#deviceMountedOn" title="http://purl.org/botsh-ext#deviceMountedOn">
+            <span>device mounted on</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasBuilding" title="http://purl.org/botsh-ext#hasBuilding">has building</a>
+      </li>
+      <li>
+         <a href="#hasElement" title="http://purl.org/botsh-ext#hasElement">has building element</a>
+      </li>
+      <li>
+         <a href="#hasMLRun" title="http://purl.org/botsh-ext#hasMLRun">
+            <span>has m l run</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasNetworkInterface" title="http://purl.org/botsh-ext#hasNetworkInterface">
+            <span>has network interface</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasNonBuilding" title="http://purl.org/botsh-ext#hasNonBuilding">
+            <span>has non building</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasSpace" title="http://purl.org/botsh-ext#hasSpace">has space</a>
+      </li>
+      <li>
+         <a href="#hasStorey" title="http://purl.org/botsh-ext#hasStorey">has storey</a>
+      </li>
+      <li>
+         <a href="#hasSubThing" title="http://purl.org/botsh-ext#hasSubThing">
+            <span>has sub thing</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasSubElement" title="http://purl.org/botsh-ext#hasSubElement">has sub-element</a>
+      </li>
+      <li>
+         <a href="#hasThing" title="http://purl.org/botsh-ext#hasThing">has Thing</a>
+      </li>
+      <li>
+         <a href="#interfaceOf" title="http://purl.org/botsh-ext#interfaceOf">interface of</a>
+      </li>
+      <li>
+         <a href="#intersectingElement" title="http://purl.org/botsh-ext#intersectingElement">intersecting element</a>
+      </li>
+      <li>
+         <a href="#intersectsZone" title="http://purl.org/botsh-ext#intersectsZone">intersects zone</a>
+      </li>
+      <li>
+         <a href="#isPartOf" title="http://purl.org/botsh-ext#isPartOf">
+            <span>is part of</span>
+         </a>
+      </li>
+      <li>
+         <a href="#linkHasInterface" title="http://purl.org/botsh-ext#linkHasInterface">
+            <span>link has interface</span>
+         </a>
+      </li>
+      <li>
+         <a href="#usesNetworkCommunicationDevice"
+            title="http://purl.org/botsh-ext#usesNetworkCommunicationDevice">
+            <span>uses network communication device</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="adjacentElement">
+      <h3>adjacent element<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#adjacentElement</p>
+      <div class="comment">
+         <span class="markdown">Relation between a zone and its adjacent building elements, bounding the zone.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasElement" title="http://purl.org/botsh-ext#hasElement">has building element</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="adjacentZone">
+      <h3>adjacent zone<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#adjacentZone</p>
+      <div class="comment">
+         <span class="markdown">Relationship between two zones that share a common interface, but do not intersect.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> symmetric</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="containsElement">
+      <h3>contains element<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#containsElement</p>
+      <div class="comment">
+         <span class="markdown">Relation to a building element contained in a zone.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasElement" title="http://purl.org/botsh-ext#hasElement">has building element</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#containsElement" title="http://purl.org/botsh-ext#containsElement">contains element</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="containsThing">
+      <h3>contains thing<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#containsThing</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasThing" title="http://purl.org/botsh-ext#hasThing">has Thing</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#containsElement" title="http://purl.org/botsh-ext#containsElement">contains element</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#containsThing" title="http://purl.org/botsh-ext#containsThing">contains thing</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="containsZone">
+      <h3>contains zone<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#containsZone</p>
+      <div class="comment">
+         <span class="markdown">Relationship to the subzones of a major zone. A space zone could for instance be contained in a storey zone which is further contained in a building zone. botsh-ext:containsZone is a transitive property. This implies that in the previous example a botsh-ext:containsZone relationship holds between the space zone and the building zone.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> transitive</p>
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasBuilding" title="http://purl.org/botsh-ext#hasBuilding">has building</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#hasNonBuilding" title="http://purl.org/botsh-ext#hasNonBuilding">has non building</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#hasSpace" title="http://purl.org/botsh-ext#hasSpace">has space</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#hasStorey" title="http://purl.org/botsh-ext#hasStorey">has storey</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="deviceMountedOn">
+      <h3>device mounted on<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#deviceMountedOn</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#isPartOf" title="http://purl.org/botsh-ext#isPartOf">is part of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasBuilding">
+      <h3>has building<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasBuilding</p>
+      <div class="comment">
+         <span class="markdown">Relation to buildings contained in a zone. The typical domains of botsh-ext:hasBuilding are instances of botsh-ext:Site.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Building" title="http://purl.org/botsh-ext#Building">Building</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasElement">
+      <h3>has building element<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasElement</p>
+      <div class="comment">
+         <span class="markdown">Links a Zone to an Element that is either contained in, adjacent to or intersecting with the Zone. The intended use of this relationship is not to be stated explicitly, but to be inferred from its sub-properties. It will, for example, allow one to query for all the doors of a building given that they have an adjacency to spaces of the building.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#adjacentElement" title="http://purl.org/botsh-ext#adjacentElement">adjacent element</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#containsElement" title="http://purl.org/botsh-ext#containsElement">contains element</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#intersectingElement" title="http://purl.org/botsh-ext#intersectingElement">intersecting element</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">architectural element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#hasElement" title="http://purl.org/botsh-ext#hasElement">has building element</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasMLRun">
+      <h3>has m l run<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasMLRun</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MicroController" title="http://purl.org/botsh-ext#MicroController">micro controller</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/mls#Run"
+                  target="_blank"
+                  title="http://www.w3.org/ns/mls#Run">run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasNetworkInterface">
+      <h3>has network interface<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasNetworkInterface</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/toco/Device" title="http://purl.org/toco/Device">device</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://purl.org/toco/Interface" title="http://purl.org/toco/Interface">interface</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasNonBuilding">
+      <h3>has non building<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasNonBuilding</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#NonBuilding" title="http://purl.org/botsh-ext#NonBuilding">non building</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSpace">
+      <h3>has space<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasSpace</p>
+      <div class="comment">
+         <span class="markdown">Relation to spaces contained in a zone. The typical domains of botsh-ext:hasSpace are instances of botsh-ext:BuildingStorey or botsh-ext:Building.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Space" title="http://purl.org/botsh-ext#Space">Space</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasStorey">
+      <h3>has storey<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasStorey</p>
+      <div class="comment">
+         <span class="markdown">Relation to storeys contained in a zone. The typical domains of botsh-ext:hasStorey are instances of botsh-ext:Building.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#BuildingStorey" title="http://purl.org/botsh-ext#BuildingStorey">Building Storey</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSubThing">
+      <h3>has sub thing<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasSubThing</p>
+      <div class="comment">
+         <span class="markdown">One controller can have another controller or sensor as part of it.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSubElement">
+      <h3>has sub-element<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasSubElement</p>
+      <div class="comment">
+         <span class="markdown">Relation between two building elements, either one element hosting another (e.g. a wall hosts a window) or a subcomposition of a building element into smaller parts (e.g. an air handling unit has as a part a fan).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">architectural element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">architectural element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasThing">
+      <h3>has Thing<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#hasThing</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#containsThing" title="http://purl.org/botsh-ext#containsThing">contains thing</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">architectural element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isPartOf" title="http://purl.org/botsh-ext#isPartOf">is part of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#containsZone" title="http://purl.org/botsh-ext#containsZone">contains zone</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#hasElement" title="http://purl.org/botsh-ext#hasElement">has building element</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#hasThing" title="http://purl.org/botsh-ext#hasThing">has Thing</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="interfaceOf">
+      <h3>interface of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#interfaceOf</p>
+      <div class="comment">
+         <span class="markdown">Relationship between an interface and another thing (building zone, element or owl:Thing)</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#BuildingInterface" title="http://purl.org/botsh-ext#BuildingInterface">Building Interface</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#BuildingElement" title="http://purl.org/botsh-ext#BuildingElement">Building Element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="intersectingElement">
+      <h3>intersecting element<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#intersectingElement</p>
+      <div class="comment">
+         <span class="markdown">Relation between a Zone and a building Element that intersects it.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasElement" title="http://purl.org/botsh-ext#hasElement">has building element</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="intersectsZone">
+      <h3>intersects zone<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#intersectsZone</p>
+      <div class="comment">
+         <span class="markdown">Relationship between two zones whose 3D extent intersect. For example, a stairwell intersects different storeys.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> symmetric</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Zone" title="http://purl.org/botsh-ext#Zone">Zone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isPartOf">
+      <h3>is part of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#isPartOf</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://purl.org/botsh-ext#">http://purl.org/botsh-ext#</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#deviceMountedOn" title="http://purl.org/botsh-ext#deviceMountedOn">device mounted on</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ArchitecturalElement" title="http://purl.org/botsh-ext#ArchitecturalElement">architectural element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasThing" title="http://purl.org/botsh-ext#hasThing">has Thing</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="linkHasInterface">
+      <h3>link has interface<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#linkHasInterface</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/toco/Link" title="http://purl.org/toco/Link">link</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://purl.org/toco/Interface" title="http://purl.org/toco/Interface">interface</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="usesNetworkCommunicationDevice">
+      <h3>uses network communication device<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/botsh-ext#usesNetworkCommunicationDevice</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Thing" title="http://purl.org/botsh-ext#Thing">Thing</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://purl.org/toco/Device" title="http://purl.org/toco/Device">device</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

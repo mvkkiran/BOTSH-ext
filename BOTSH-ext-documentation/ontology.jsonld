@@ -1,0 +1,1149 @@
+[ {
+  "@id" : "http://purl.org/bosh#ActuatingDevice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ]
+}, {
+  "@id" : "http://purl.org/bosh#Appliance",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#ElectronicDevices"
+  } ]
+}, {
+  "@id" : "http://purl.org/bosh#NetworkComponent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ]
+}, {
+  "@id" : "http://purl.org/bosh#SensingDevice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2024-07-14"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@language" : "en",
+    "@value" : "Ramesh Gowtham"
+  }, {
+    "@language" : "en",
+    "@value" : "Vamsee Krishna Kiran Muppavarapu"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "BOTSH Ontology extended with concepts related to Building and Non-Building structures with alignments to ToCo and ML-Schema ontologies."
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2024-12-02"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "Building Topology Ontology for Smart Homes (botsh-ext)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Building Topology Ontology for Smart Homes - extended. BOTSH ontology is extended and aligned with ToCo communication ontology and ML-Schema ontology. Developed as part of PhD research work."
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "v.1.0"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#AgriculturalBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#AnimalBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Arch",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#ArchitecturalElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Architectural elements are the unique details and component parts that, together, form the architectural style of houses, buildings and structures."
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#BathRoom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Room"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Beam",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#BedRoom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Room"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Bridge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Building",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A building or edifice, is an enclosed structure with a roof and walls standing more or less permanently in one place, such as a house and is specifically designed for human occupancy. A botsh-ext:Building is a part of the physical world or a virtual world that is inherently located in this world and having a 3D spatial extent, is contained in a building site, and can contain one or more building storeys that are vertically connected."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Building"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingStorey"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#BuildingElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Constituent of a construction entity with a characteristic technical function. Example: Wall, Door, Window and Furniture"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Building Element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#ArchitecturalElement"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingInterface"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#BuildingInterface",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A generic concept to qualify the relationship of two or more things in the world, where at least one is a building element or zone. Example:\n    - A door between one room and another."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Building Interface"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#BuildingStorey",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A part of the physical world or a virtual world that is inherently both located in this world and having a 3D spatial extent. A botsh-ext:BuildingStorey is contained in one or more buildings, and is intended to contain one or more spaces that are horizontally connected. Storeys of a building are connected by means of vertical connections such as elevators and stairs. A botsh-ext:BuildingStorey encompasses both zones above and below ground, for example, a building with 21 floors above ground, one ground floor and 3 basements is equal to the sentence: A building has 25 instances of botsh-ext:BuildingStorey."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Building Storey"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Cantilever",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Ceiling",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Chimney",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Column",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#CommercialBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#CommonRoom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Room"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Dam",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Dome",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Roof"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Door",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Doorway",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#DrawingRoom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Room"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#EducationalBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#ElectricalDevices",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#ElectricalSystem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Other elements like switches, switchboards, wiring etc. can be sub classes of Electrical system."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#ElectronicDevices",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Factory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Floor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Footing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Foundation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Furniture",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Greenhouse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Hall",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A hall is a relatively large space enclosed by a roof and walls."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Room"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#IndustrialBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Kitchen",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Room"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Lighting",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Lintel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#LivingRoom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Room"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#MedicalBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#MicroController",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#MilitaryBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Monument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#NonBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A nonbuilding structure, also referred to simply as a structure, refers to any body or system of connected parts used to support a load that was not designed for continuous human occupancy."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Pier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Railing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Ramp",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#ReligiousBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#ResidentialBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Roof",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Room",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Shed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Site",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A part of the physical world or a virtual world that is inherently located in this world and having a 3D spatial extent. It is intended to contain or contains one or more buildings."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Site"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Skyscrapers",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Space",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A part of the physical world or a virtual world whose 3D spatial extent is bounded actually or theoretically, and provides for certain functions within the zone it is contained in."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Stair",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#StructuralElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#ArchitecturalElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Studio",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Thing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Thing is any entity that is either electronic or hydraulic. May or may not have communication capabilities. If it can communicate using digital medium, it becomes a device which is a subclass of Thing."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Thing"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://git.onem2m.org/MAS/BaseOntology/raw/master/base_ontology.owl#Thing"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Tower",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#TransportBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Tunnel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Wall",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#StructuralElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Wardrobe",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Warehouse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Window",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingElement"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Workshop",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#Zone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A part of the physical world or a virtual world that is inherently botsh-ext located in this world and has a 3D spatial extent; Sub-classes of botsh-ext:Zone include botsh-ext:Site, botsh-ext:Building, botsh-ext:BuildingStorey, or botsh-ext:Space.  An instance of botsh-ext:Zone can contain other botsh-ext:Zone instances, making it possible to group or subdivide zones. An instance of botsh-ext:Zone can be adjacent to or intersecting other botsh-ext:Zone instances. Finally, a botsh-ext:Zone can instantiate three relations to botsh-ext:BuildingElement, which are either contained in (botsh-ext:containsElement), adjacent to it (botsh-ext:adjacentElement) or intersecting (botsh-ext:intersectingElement)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Zone"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#adjacentElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relation between a zone and its adjacent building elements, bounding the zone."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "adjacent element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#hasElement"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#intersectingElement"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#adjacentZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relationship between two zones that share a common interface, but do not intersect."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "adjacent zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
+    "@id" : "http://purl.org/botsh-ext#intersectsZone"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ],
+  "https://schema.org/domainIncludes" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#BuildingStorey"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ],
+  "https://schema.org/rangeIncludes" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#BuildingStorey"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#containsElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relation to a building element contained in a zone."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "contains element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#hasElement"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "http://purl.org/botsh-ext#containsZone"
+    }, {
+      "@id" : "http://purl.org/botsh-ext#containsElement"
+    } ]
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#containsThing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "contains thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#hasThing"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "http://purl.org/botsh-ext#containsZone"
+    }, {
+      "@id" : "http://purl.org/botsh-ext#containsElement"
+    }, {
+      "@id" : "http://purl.org/botsh-ext#containsThing"
+    } ]
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#containsZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relationship to the subzones of a major zone. A space zone could for instance be contained in a storey zone which is further contained in a building zone. botsh-ext:containsZone is a transitive property. This implies that in the previous example a botsh-ext:containsZone relationship holds between the space zone and the building zone."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "contains zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ],
+  "https://schema.org/domainIncludes" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#BuildingStorey"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ],
+  "https://schema.org/rangeIncludes" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#BuildingStorey"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#deviceMountedOn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#isPartOf"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relation to buildings contained in a zone. The typical domains of botsh-ext:hasBuilding are instances of botsh-ext:Site."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has building"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#containsZone"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ],
+  "https://schema.org/domainIncludes" : [ {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a Zone to an Element that is either contained in, adjacent to or intersecting with the Zone. The intended use of this relationship is not to be stated explicitly, but to be inferred from its sub-properties. It will, for example, allow one to query for all the doors of a building given that they have an adjacency to spaces of the building."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has building element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#ArchitecturalElement"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "http://purl.org/botsh-ext#containsZone"
+    }, {
+      "@id" : "http://purl.org/botsh-ext#hasElement"
+    } ]
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasMLRun",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#MicroController"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/ns/mls#Run"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasNetworkInterface",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/toco/Device"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/toco/Interface"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasNonBuilding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#NonBuilding"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#containsZone"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relation to spaces contained in a zone. The typical domains of botsh-ext:hasSpace are instances of botsh-ext:BuildingStorey or botsh-ext:Building."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#containsZone"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ],
+  "https://schema.org/domainIncludes" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingStorey"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasStorey",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relation to storeys contained in a zone. The typical domains of botsh-ext:hasStorey are instances of botsh-ext:Building."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has storey"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingStorey"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#containsZone"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ],
+  "https://schema.org/domainIncludes" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasSubElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relation between two building elements, either one element hosting another (e.g. a wall hosts a window) or a subcomposition of a building element into smaller parts (e.g. an air handling unit has as a part a fan)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#ArchitecturalElement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has sub-element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#ArchitecturalElement"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasSubThing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "One controller can have another controller or sensor as part of it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#hasThing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#ArchitecturalElement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#isPartOf"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "http://purl.org/botsh-ext#containsZone"
+    }, {
+      "@id" : "http://purl.org/botsh-ext#hasElement"
+    }, {
+      "@id" : "http://purl.org/botsh-ext#hasThing"
+    } ]
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#interfaceOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relationship between an interface and another thing (building zone, element or owl:Thing)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingInterface"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "interface of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#BuildingElement"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#intersectingElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relation between a Zone and a building Element that intersects it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "intersecting element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/botsh-ext#hasElement"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#intersectsZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relationship between two zones whose 3D extent intersect. For example, a stairwell intersects different storeys."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "intersects zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#Zone"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ],
+  "https://schema.org/domainIncludes" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#BuildingStorey"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ],
+  "https://schema.org/rangeIncludes" : [ {
+    "@id" : "http://purl.org/botsh-ext#Building"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#BuildingStorey"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Site"
+  }, {
+    "@id" : "http://purl.org/botsh-ext#Space"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#isPartOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/botsh-ext#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/botsh-ext#ArchitecturalElement"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#linkHasInterface",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/toco/Link"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/toco/Interface"
+  } ]
+}, {
+  "@id" : "http://purl.org/botsh-ext#usesNetworkCommunicationDevice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/botsh-ext#Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.org/toco/Device"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/contributor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/toco/Device",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/bosh#NetworkComponent"
+  } ]
+}, {
+  "@id" : "http://purl.org/toco/Interface",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/bosh#NetworkComponent"
+  } ]
+}, {
+  "@id" : "http://purl.org/toco/Link",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/bosh#NetworkComponent"
+  } ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2006/vcard/ns#fn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/mls#Run",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://git.onem2m.org/MAS/BaseOntology/raw/master/base_ontology.owl#Thing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/domainIncludes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/rangeIncludes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]
