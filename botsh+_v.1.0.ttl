@@ -1,4 +1,4 @@
-@prefix : <http://purl.org/botsh-ext-ext#> .
+@prefix : <http://purl.org/botsh-ext#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix bot: <https://w3id.org/bot#> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
@@ -10,14 +10,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
-@prefix botsh-ext-ext: <http://purl.org/botsh-ext-ext#> .
+@prefix botsh-ext: <http://purl.org/botsh-ext-ext#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix onem2m: <https://git.onem2m.org/MAS/BaseOntology/raw/master/base_ontology.owl#> .
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://purl.org/botsh-ext-ext> .
+@base <http://purl.org/botsh-ext> .
 
-<http://purl.org/botsh-ext-ext> rdf:type owl:Ontology ;
+<http://purl.org/botsh-ext> rdf:type owl:Ontology ;
                          dcterms:creator "Vamsee Krishna Kiran Muppavarapu"@en ;
                          dcterms:modified "2024-12-02" ;
                          rdfs:comment "Building Topology Ontology for Smart Homes - extended. BOTSH ontology is extended and aligned with ToCo communication ontology and ML-Schema ontology. Developed as part of PhD research work."@en ;
